@@ -1,0 +1,27 @@
+.social-media-container {
+    text-align: left;
+    min-width: 200px;
+  }
+  
+  .social-media-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3a56;
+    border-bottom: 2px solid #1e3a56;
+    display: inline-block;
+  }
+  
+  .icons-container {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+  }
+  
+  .icon-link {
+    color: #1e3a56;
+    transition: color 0.3s;
+  }
+  
+  .icon-link:hover {
+    color: #0d3b66;
+  }

@@ -1,0 +1,32 @@
+.footer-container {
+    background-color: #e6eff8;
+    padding: 40px 20px;
+    color: #1e3a56;
+  }
+  
+
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1e3a56;
+  }
+
+
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: 
+    wrap;  /* Mantiene todo en una fila */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  .footer-wrapper > * {
+    flex: 1;  /* Hace que todos los hijos ocupen el mismo espacio */
+    min-width: 0;  /* Evita que el contenido se desborde */
+  }
+  
