@@ -19,14 +19,14 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: 
-    wrap;  /* Mantiene todo en una fila */
+    wrap;  
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
   }
   
   .footer-wrapper > * {
-    flex: 1;  /* Hace que todos los hijos ocupen el mismo espacio */
-    min-width: 0;  /* Evita que el contenido se desborde */
+    flex: 1; 
+    min-width: 0;  
   }
   

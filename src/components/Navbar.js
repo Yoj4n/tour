@@ -3,6 +3,7 @@ import "../styles/Navbar.css";
 import useNavbarState from "../hooks/useNavbarState";
 import "./Login";
 import { Link } from "react-router-dom";
+// import logo from "../images/tourelcaminanteblancohorizontal.png";
 
 function Navbar() {
   const { isMobile, menuOpen, toggleMenu, isScrolled } = useNavbarState();
@@ -11,7 +12,9 @@ function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
-        <Link to="/">TOUR EL CAMINANTE</Link>
+        <Link to="/">
+          <img  alt="Tour El Caminante" className="logo-image-navbar" />
+        </Link>
         {isMobile ? (
           <>
             <button className="menu-toggle" onClick={toggleMenu}>
@@ -22,20 +25,33 @@ function Navbar() {
                 <Link to="/">Inicio</Link>
               </li>
               <li className="dropdown">
-                <button  onClick={() => setDropdownOpen(!dropdownOpen)} className="dropdown-toggle">
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="dropdown-toggle"
+                >
                   Sobre Nosotros ▼
                 </button>
                 {dropdownOpen && (
                   <ul className="dropdown-menu">
-                    <li><Link to="/about/history">Historia</Link></li>
-                    <li><Link to="/about/contact">Contáctenos</Link></li>
-                    <li><Link to="/about/faq">FAQ</Link></li>
+                    <li>
+                      <Link to="/about/history">Historia</Link>
+                    </li>
+                    <li>
+                      <Link to="/about/contact">Contáctenos</Link>
+                    </li>
+                    <li>
+                      <Link to="/about/faq">FAQ</Link>
+                    </li>
                   </ul>
                 )}
               </li>
-  
-              <li><Link to="/destinations">Destinos</Link></li>
-              <li><Link to="/vistaDetalle">Destinos</Link></li>
+
+              <li>
+                <Link to="/destinations">Destinos</Link>
+              </li>
+              <li>
+                <Link to="/vistaDetalle">Destinos</Link>
+              </li>
               <li>
                 <Link to="/login">
                   <button className="btn-book">Login</button>
@@ -49,19 +65,28 @@ function Navbar() {
               <li>
                 <Link to="/">Inicio</Link>
               </li>
-              <li 
+              <li
                 className="dropdown"
                 onMouseEnter={() => setDropdownOpen(true)}
                 onMouseLeave={() => setDropdownOpen(false)}
               >
-                <button  onClick={() => setDropdownOpen(!dropdownOpen)} className="dropdown-toggle">
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="dropdown-toggle"
+                >
                   Sobre Nosotros ▼
                 </button>
                 {dropdownOpen && (
                   <ul className="dropdown-menu">
-                    <li><Link to="/about/history">Historia</Link></li>
-                    <li><Link to="/about/contact">Contáctenos</Link></li>
-                    <li><Link to="/about/faq">FAQ</Link></li>
+                    <li>
+                      <Link to="/about/history">Historia</Link>
+                    </li>
+                    <li>
+                      <Link to="/about/contact">Contáctenos</Link>
+                    </li>
+                    <li>
+                      <Link to="/about/faq">FAQ</Link>
+                    </li>
                   </ul>
                 )}
               </li>

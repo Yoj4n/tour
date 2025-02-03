@@ -1,6 +1,6 @@
 import React from "react";
 import { Facebook, Instagram, Youtube, MessageCircle } from "lucide-react";
-import '../../styles/Footer/SocialMedia.css'; // Importa el archivo CSS
+import '../../styles/Footer/SocialMedia.css'; 
 
 const SocialMedia = () => {
   return (

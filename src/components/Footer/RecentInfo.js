@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/Footer/RecentInfo.css'; // Importa el archivo CSS
+import '../../styles/Footer/RecentInfo.css'; 
 
 const RecentInfo = () => {
   return (
