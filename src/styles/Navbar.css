@@ -33,16 +33,16 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-img.logo-image-navbar {
-  background: url('../images/tourelcaminanteAZULHorizontal.png');  
+.logo-image-navbar {
+  background: url('../images/tourelcaminanteblancohorizontal.png');  
   width: 117px;
   height: 40px; /* Define un alto para que la imagen sea visible */
   background-size: contain; /* Ajusta la imagen al tamaño del contenedor */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
-.navbar.scrolled img.logo-image-navbar {
-  background: url('../images/tourelcaminanteblancohorizontal.png');  
+.navbar.scrolled .logo-image-navbar {
+  background: url('../images/tourelcaminanteAZULHorizontal.png') !important;  
 }
 
 .desktop-menu .nav-links {

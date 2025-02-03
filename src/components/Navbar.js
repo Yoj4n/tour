@@ -13,7 +13,7 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <Link to="/">
-          <img  alt="Tour El Caminante" className="logo-image-navbar" />
+        <div className="logo-image-navbar"></div> 
         </Link>
         {isMobile ? (
           <>
