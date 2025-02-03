@@ -1,0 +1,17 @@
+.banner {
+    background-color: #949494;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  .banner h1 {
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  

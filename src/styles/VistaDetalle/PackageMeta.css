@@ -1,0 +1,21 @@
+.package-meta ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  align-items: center;
+  color: #555;
+}
+
+.package-meta li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.package-meta .icon {
+  color: #007bff;
+  font-size: 16px;
+}

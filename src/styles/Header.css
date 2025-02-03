@@ -1,0 +1,14 @@
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+  }
+  

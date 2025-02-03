@@ -1,0 +1,23 @@
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.update-cart, .checkout {
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+
+.update-cart {
+  background: #007bff;
+}
+
+.checkout {
+  background: #28a745;
+}

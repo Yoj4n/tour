@@ -1,0 +1,76 @@
+.cart-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Contenedor flexible */
+/* .cart-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: anchor-center;
+  gap: 20px;
+} */
+
+/* Tabla en desktop */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.cart-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* En móvil, convertir a lista */
+@media (max-width: 768px) {
+  .cart-content {
+    flex-direction: column;
+  }
+
+  .cart-table {
+    display: inline-grid;
+  }
+
+  .cart-table thead {
+    display: none;
+  }
+
+  .cart-table tr {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+  }
+
+  .cart-table td {
+    display: block;
+    border: none;
+    padding: 5px 10px;
+  }
+
+  .cart-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}
