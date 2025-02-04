@@ -11,6 +11,7 @@ import Login from '../src/components/Login.js';
 
 import VistaDetalle from './views/VistaDetalle.js';
 import Cart from './views/Cart.js';
+import ContactForm from './components/Contact/ContactoFrom.js';
 
 
 
@@ -29,6 +30,7 @@ function App() {
           {/* <Route path='/vistaDetalle' element={<VistaDetalle/>}/> */}
           <Route path="/detalle/:id" element={<VistaDetalle />} />
           <Route path='/cart'element={<Cart/>}/>
+          <Route path='/contact'element={<ContactForm/>}/>
         </Routes>
       </main>
       <Footer />

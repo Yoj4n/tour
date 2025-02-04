@@ -25,7 +25,7 @@ function Navbar() {
               <li><Link to="/about">Sobre Nosotros</Link></li>
               <li><Link to="/destinations">Servicios Turísticos</Link></li>
               <li><Link to="/vistaDetalle">Información Turística</Link></li>
-              <li><Link to="/about/contact">Contáctenos</Link></li>
+              <li><Link to="/contact">Contáctenos</Link></li>
               <li>
                 <Link to="/login">
                   <button className="btn-book">Iniciar Sesion</button>
@@ -40,7 +40,7 @@ function Navbar() {
               <li><Link to="/about">Sobre Nosotros</Link></li>
               <li><Link to="/destinations">Servicios Turísticos</Link></li>
               <li><Link to="/vistaDetalle">Información Turística</Link></li>
-              <li><Link to="/about/contact">Contáctenos</Link></li>
+              <li><Link to="/contact">Contáctenos</Link></li>
             </ul>
             <Link to="/login">
               <button className="btn-book">Iniciar Sesion</button>
