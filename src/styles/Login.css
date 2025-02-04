@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #2b87ff 0%, #f8f0ff 100%);
+  background: #2387b1;
 }
 
 .auth-card {
@@ -11,12 +11,12 @@
   padding: 2rem;
   border-radius: 1.5rem;
   width: 24rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .auth-card:hover {
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
@@ -41,8 +41,7 @@
   font-weight: 800;
   text-align: center;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
+  background: #1e3a56;
   background-clip: text;
   color: transparent;
 }
@@ -52,37 +51,52 @@
   gap: 1rem;
 }
 
-.input-group {
+.input-group-login {
   position: relative;
 }
 
 .input-icon {
   position: absolute;
-  left: 0.75rem;
+  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   color: #94a3b8;
+  z-index: 1;
+  pointer-events: none;
 }
+svg.input-icon-u{
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  z-index: 1;
+  pointer-events: none;
+  margin-right: 5px;
 
+}
 .auth-input {
   width: 85%;
   padding: 0.75rem 0.75rem 0.75rem 2.5rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #d1d5db;
   border-radius: 50px;
   font-size: 0.875rem;
   transition: all 0.3s ease;
+  background-color: #f9fafb;
+  color: #1e3a56;
 }
 
 .auth-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
+  border: none;
+  /* border-color: #3b82f6; */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .auth-button {
-  width: 100;
+  width: 100%;
   padding: 0.75rem;
-  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  background: #1e3a56;
   color: white;
   font-weight: 600;
   border: none;
@@ -118,13 +132,13 @@
 }
 
 .toggle-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background: #8b5cf6;
+  background: #2387b1;
   transition: width 0.3s ease;
 }
 
@@ -137,4 +151,18 @@
   font-size: 0.75rem;
   color: #94a3b8;
   text-align: center;
+}
+
+.name-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.name-row .input-group-login {
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.name-row .auth-input {
+  width: 65%;
 }
