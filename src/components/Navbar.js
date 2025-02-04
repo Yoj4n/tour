@@ -13,7 +13,7 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <Link to="/">
-        <div className="logo-image-navbar"></div> 
+          <div className="logo-image-navbar"></div>
         </Link>
         {isMobile ? (
           <>
@@ -21,40 +21,14 @@ function Navbar() {
               ☰
             </button>
             <ul className={`nav-links-mobile ${menuOpen ? "active" : ""}`}>
-              <li>
-                <Link to="/">Inicio</Link>
-              </li>
-              <li className="dropdown">
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="dropdown-toggle"
-                >
-                  Sobre Nosotros ▼
-                </button>
-                {dropdownOpen && (
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link to="/about/history">Historia</Link>
-                    </li>
-                    <li>
-                      <Link to="/about/contact">Contáctenos</Link>
-                    </li>
-                    <li>
-                      <Link to="/about/faq">FAQ</Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-
-              <li>
-                <Link to="/destinations">Destinos</Link>
-              </li>
-              <li>
-                <Link to="/vistaDetalle">Destinos</Link>
-              </li>
+              <li><Link to="/">Inicio</Link></li>
+              <li><Link to="/destinations">Sobre Nosotros</Link></li>
+              <li><Link to="/destinations">Servicios Turísticos</Link></li>
+              <li><Link to="/vistaDetalle">Información Turística</Link></li>
+              <li><Link to="/about/contact">Contáctenos</Link></li>
               <li>
                 <Link to="/login">
-                  <button className="btn-book">Login</button>
+                  <button className="btn-book">Iniciar Sesion</button>
                 </Link>
               </li>
             </ul>
@@ -62,46 +36,14 @@ function Navbar() {
         ) : (
           <div className="desktop-menu">
             <ul className="nav-links">
-              <li>
-                <Link to="/">Inicio</Link>
-              </li>
-              <li
-                className="dropdown"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
-              >
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="dropdown-toggle"
-                >
-                  Sobre Nosotros ▼
-                </button>
-                {dropdownOpen && (
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link to="/about/history">Historia</Link>
-                    </li>
-                    <li>
-                      <Link to="/about/contact">Contáctenos</Link>
-                    </li>
-                    <li>
-                      <Link to="/about/faq">FAQ</Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-              <li>
-                <Link to="/destinations">Destinos</Link>
-              </li>
-              <li>
-                <Link to="/vistaDetalle">Paquetes</Link>
-              </li>
-              <li>
-                <a href="www.google.com">Contact</a>
-              </li>
+              <li><Link to="/">Inicio</Link></li>
+              <li><Link to="/destinations">Sobre Nosotros</Link></li>
+              <li><Link to="/destinations">Servicios Turísticos</Link></li>
+              <li><Link to="/vistaDetalle">Información Turística</Link></li>
+              <li><Link to="/about/contact">Contáctenos</Link></li>
             </ul>
             <Link to="/login">
-              <button className="btn-book">Login</button>
+              <button className="btn-book">Iniciar Sesion</button>
             </Link>
           </div>
         )}

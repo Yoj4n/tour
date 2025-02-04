@@ -4,6 +4,7 @@
   width: 100%;
   background-color: transparent;
   color: #fff;
+  font-weight: bold;
   z-index: 1000;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding: 15px 20px;
@@ -12,13 +13,14 @@
 
 .navbar.scrolled {
   background-color: #fff;
-  color: #333 !important;
+  color: #1e3a56 !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled a,
 .navbar.scrolled .dropdown-toggle {
-  color: #000 !important;
+  font-weight: bold;
+  color: #1e3a56 !important;
 }
 
 .navbar.scrolled .dropdown-menu a {
@@ -36,13 +38,15 @@
 .logo-image-navbar {
   background: url('../images/tourelcaminanteblancohorizontal.png');  
   width: 117px;
-  height: 40px; /* Define un alto para que la imagen sea visible */
-  background-size: contain; /* Ajusta la imagen al tamaño del contenedor */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 56px; 
+  background-size: contain; 
+  background-repeat: no-repeat;
 }
 
 .navbar.scrolled .logo-image-navbar {
-  background: url('../images/tourelcaminanteAZULHorizontal.png') !important;  
+  width: 117px;
+  height: 56px; 
+  background-image: url('../images/tourelcaminanteAZULHorizontal.png') !important;  
 }
 
 .desktop-menu .nav-links {
@@ -63,16 +67,30 @@
 }
 
 .desktop-menu .btn-book {
-  background-color: #456be9;
-  color: #fff;
+  background-color: #e6eff8;
+  color: #185d7a;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
+  font-size: 16px;
 }
 
+.navbar.scrolled .desktop-menu .btn-book{
+  background-color: #185d7a;
+  color: #fff;
+  font-weight: bold;
+}
+/* #e6eff8 
+#185d7a #456be4*/
+
+.navbar.scrolled .desktop-menu .btn-book:hover{
+  background-color: #e6eff8 ;
+  color: #185d7a;
+}
 .desktop-menu .btn-book:hover {
-  background-color: #ff5c7a;
+  background-color:#1e3a56 ;
+  color: #fff;
 }
 
 .navbar .menu-toggle {
@@ -89,7 +107,7 @@
   display: none;
   flex-direction: column;
   gap: 10px;
-  background-color: #1a1a2e;
+  background-color: #186aa5;
   position: absolute;
   top: 60px;
   right: 20px;
@@ -115,48 +133,10 @@
 .navbar .nav-links-mobile.active {
   display: flex;
 }
+.navbar .nav-links-mobile.active .btn-book {
+  background-color: white;
+  color:#186aa5 ;
+  margin: 0px;
+  
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #ffffff;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgb(0, 41, 80);
-  list-style: none;
-  padding: 10px 0;
-  margin-top: 5px;
-  display: block;
-  min-width: 150px;
-  border-radius: 5px;
-}
-
-.dropdown-menu li {
-  padding: 4px 20px;
-  color: rgb(255, 255, 255);
-}
-
-.dropdown-menu li a {
-  display: block;
-}
-
-.dropdown-menu li:hover {
-  background: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-  }
 }

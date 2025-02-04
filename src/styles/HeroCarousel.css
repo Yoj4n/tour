@@ -6,12 +6,13 @@
 }
 
 .carousel-slide {
-  height: 80vh;
+  height: 65vh;
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  background-color: #1b8dff;
-  z-index: -1000;
+  /* background-color: #1b8dff; */
+  z-index: -10;
+
 }
 
 .carousel-image {
@@ -82,11 +83,10 @@
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   letter-spacing: 0.5px;
-  font-weight: 600;
-  backdrop-filter: blur(5px);
-  color: white;
-  background-color: #4173ff; 
+  font-weight: bold;
   margin: 10px;
+  background-color: #2387b1;
+  color: white;
 }
 
 
@@ -116,7 +116,7 @@
 .slick-dots li.slick-active button:before {
   opacity: 1;
   font-size: 16px;
-  color: #ffa500;
+  
 }
 
 

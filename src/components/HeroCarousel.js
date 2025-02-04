@@ -53,8 +53,8 @@ function HeroCarousel() {
             <div className="carousel-content">
               <h1>{slide.title}</h1>
               <p>{slide.description}</p>
-              <button className="btn-learn">Más información</button>
-              <button className="btn-book">Reservar ahora</button>
+              <button className="btn-learn">LEER MÁS</button>
+              <button className="btn-book">¡RESERVAR AHORA!</button>
             </div>
           </div>
         ))}
