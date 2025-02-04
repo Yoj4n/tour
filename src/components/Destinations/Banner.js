@@ -3,8 +3,8 @@ import "../../styles/Destinations/Banner.css";
 
 const Banner = () => {
   return (
-    <div className="banner">
-      <h1>DESTINATION</h1>
+    <div className="banner-portafolio">
+      <h1>PORTAFOLIO DE SERVICIOS</h1>
     </div>
   );
 };

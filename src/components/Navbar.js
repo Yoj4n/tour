@@ -22,7 +22,7 @@ function Navbar() {
             </button>
             <ul className={`nav-links-mobile ${menuOpen ? "active" : ""}`}>
               <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/destinations">Sobre Nosotros</Link></li>
+              <li><Link to="/about">Sobre Nosotros</Link></li>
               <li><Link to="/destinations">Servicios Turísticos</Link></li>
               <li><Link to="/vistaDetalle">Información Turística</Link></li>
               <li><Link to="/about/contact">Contáctenos</Link></li>
@@ -37,7 +37,7 @@ function Navbar() {
           <div className="desktop-menu">
             <ul className="nav-links">
               <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/destinations">Sobre Nosotros</Link></li>
+              <li><Link to="/about">Sobre Nosotros</Link></li>
               <li><Link to="/destinations">Servicios Turísticos</Link></li>
               <li><Link to="/vistaDetalle">Información Turística</Link></li>
               <li><Link to="/about/contact">Contáctenos</Link></li>

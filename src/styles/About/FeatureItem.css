@@ -1,0 +1,36 @@
+.feature-item {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del eje a vertical */
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .feature-icon {
+    background-color: #dbeafe;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .icon {
+    color: #1e3a8a;
+    font-size: 24px;
+  }
+  
+  .feature-text h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin: 5px 0;
+  }
+  
+  .feature-text p {
+    font-size: 14px;
+    color: #4b5563;
+  }
+  

@@ -1,4 +1,4 @@
-.banner-portafolio {
+.banner-about {
     background-color: #2387b1 !important;
     height: 300px !important;
     display: flex;
@@ -10,7 +10,7 @@
    
   }
   
-  .banner-portafolio h1 {
+  .banner-about h1 {
     font-size: clamp(20px, 5vw, 60px); ;
     color: #e6eff8 !important;
     text-transform: uppercase;

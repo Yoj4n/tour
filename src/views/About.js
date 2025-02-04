@@ -1,13 +1,17 @@
-import React from 'react';
-import '../styles/About.css';
+import React from "react";
+import "../styles/About.css";
+import Banner from "../components/About/Banner";
+import AboutSection from "../components/About/AboutSection";
 
-function About() {
+const About = () => {
   return (
-    <div className="about">
-      <h2>About Us</h2>
-      <p>We are dedicated to making your travels unforgettable.</p>
-    </div>
+    <>
+      <Banner />
+      <div className="bg-gray-100">
+        <AboutSection />
+      </div>
+    </>
   );
-}
+};
 
 export default About;
