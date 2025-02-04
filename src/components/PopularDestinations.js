@@ -41,7 +41,7 @@ function PopularDestinations() {
         </p>
         <div className="destinations-grid">
           {featuredDestinations.map((destination, index) => (
-            <Link to="/packageDetail" key={index} className="destination-card">
+             <Link to={`/detalle/${index}`} key={index} className="destination-card">
               <div className="card-image">
                 <img src={destination.imgSrc} alt={destination.title} />
               </div>

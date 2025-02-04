@@ -1,91 +1,33 @@
-/* Estilos generales */
-.about-container {
-  background-color: #f8f9fc; /* Fondo claro */
-  padding: 50px 0;
-  display: flex;
-  justify-content: center;
-}
 
-.about-section {
-  width: 80%;
-  max-width: 1200px;
-  background: white;
-  padding: 20px;
-}
-
-/* Título */
-.about-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #144a8d; /* Azul oscuro */
-  margin-bottom: 20px;
-}
-
-/* Contenido */
 .about-content {
-  display: flex;
-  gap: 30px;
   align-items: center;
 }
 
 .about-image {
   flex: 2;
-  height: 250px;
-  border: 2px solid #ccc;
-  background-color: #e3e7f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #777;
+  /* height: 250px;
+  display: flex; */
+
 }
 
-.about-features {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Características */
 .feature-item {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.feature-icon {
-  background-color: #d8e3f5;
-  padding: 15px;
-  border-radius: 50%;
-  color: #144a8d;
-  font-size: 1.5rem;
-}
 
-.feature-text h4 {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #144a8d;
-}
 
-.feature-text p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Descripción */
-.about-description {
-  margin-top: 30px;
-}
 
 .about-description h3 {
   font-size: 1.2rem;
   font-weight: bold;
   color: #144a8d;
+
+ 
 }
 
 .about-description p {
-  font-size: 1rem;
-  color: #333;
-  margin-top: 10px;
+  
+  margin-top: 15px;
 }

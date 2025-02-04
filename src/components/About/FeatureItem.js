@@ -4,7 +4,7 @@ import "../../styles/About/FeatureItem.css";
 
 const FeatureItem = ({ title }) => {
   return (
-    <div className="feature-item">
+    <div className="feature-card">
       <div className="feature-icon">
         <FaRegImage className="icon" />
       </div>
@@ -20,4 +20,3 @@ const FeatureItem = ({ title }) => {
 };
 
 export default FeatureItem;
-

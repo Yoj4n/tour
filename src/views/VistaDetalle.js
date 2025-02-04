@@ -9,10 +9,10 @@ import "../../src/styles/VistaDetalle/VistaDetalle.css";
 import PackageDetail from "../components/VistaDetalle/PackageDetail";
 
 const VistaDetalle = () => {
-  const { id } = useParams(); // Obtiene el ID de la URL
-  const destination = destinations[id]; // Busca el destino en el array
+  const { id } = useParams(); 
+  const destination = destinations[id]; 
   if (!destination) {
-    return <h2>Destino no encontrado</h2>; // Manejo de error si el ID no existe
+    return <h2>Destino no encontrado</h2>; 
   }
   return (
     <div className="vista-detalle">

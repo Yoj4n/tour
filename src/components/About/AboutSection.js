@@ -1,43 +1,59 @@
 import React from "react";
 import FeatureItem from "./FeatureItem";
-import "../../styles/About/AboutSection.css"; // Importar estilos específicos
+import "../../styles/About/AboutSection.css";
+import logo from "../../images/tourelcaminanteAzulVertical.png";
 
 const AboutSection = () => {
   return (
-    <section className="about-section">
-      <h2 className="about-title">SOBRE NOSOTROS</h2>
-
-      <div className="about-container">
-        {/* Imagen Principal */}
-        <div className="about-image">
-          <span>[Imagen aquí]</span>
+    <>
+      <section className="about-section">
+        <div className="about-content">
+          <div className="about-image">
+            <img
+              src={logo}
+              alt="Tour El Caminante"
+              className="logo-image-nosotros"
+            />
+          </div>
+          <h2 className="about-subtitle">
+            AGENCIA OPERADORA LOCAL TOUR EL CAMINANTE
+          </h2>
+          <div className="about-description">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+              nonummy eirmod tempor incididunt ut labore et dolore magna
+              aliquyam erat, sed diam voluptua... Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed diam nonummy eirmod tempor
+              incididunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua..
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+              nonummy eirmod tempor incididunt ut labore et dolore magna
+              aliquyam erat, sed diam voluptua... Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed diam nonummy eirmod tempor
+              incididunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua..
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+              nonummy eirmod tempor incididunt ut labore et dolore magna
+              aliquyam erat, sed diam voluptua... Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed diam nonummy eirmod tempor
+              incididunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua..
+            </p>
+          </div>
         </div>
-        
 
-        {/* Características */}
         <div className="about-features">
           <FeatureItem title="RNT" />
           <FeatureItem title="10 AÑOS" />
           <FeatureItem title="ATENCIÓN AL CLIENTE" />
         </div>
-        <div className="about-description">
-        <h3 className="about-subtitle">
-          AGENCIA OPERADORA LOCAL TOUR EL CAMINANTE
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-          nonummy eirmod tempor incididunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua...
-        </p>
-      </div>
-      </div>
-
-      {/* Descripción */}
-      
-    </section>
+      </section>
+    </>
   );
 };
 
 export default AboutSection;
-
-
