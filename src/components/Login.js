@@ -26,7 +26,7 @@ const AuthForm = () => {
                   type="text"
                   id="username"
                   className="auth-input"
-                  placeholder="Nombre de usuario"
+                  placeholder="Nombre"
                 />
               </div>
               <div className="input-group-login">
