@@ -1,4 +1,4 @@
-/* Contenedor principal */
+
 .contactanos-container {
     display: flex;
     flex-wrap: wrap;
@@ -12,7 +12,7 @@
     margin: auto;
   }
   
-  /* Sección de información */
+
   .contactanos-info {
     flex: 1;
     min-width: 280px;
@@ -38,7 +38,7 @@
     margin-top: 10px;
   }
   
-  /* Íconos sociales */
+  
   .social-icons {
     justify-content: center;
     display: flex;
@@ -84,7 +84,7 @@
     background: #e6eff8;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
     margin: 50px 40px;
   }
   

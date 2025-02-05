@@ -11,7 +11,7 @@ const FAQ = () => {
 
   return (
     <div className="faq-container">
-      <h2>FREQUENTLY ASKED QUESTIONS</h2>
+      <h2>PREGUNTAS Y RESPUESTAS FRECUENTES</h2>
       <p className="faq-intro">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonumy eirmod tempor invidunt...
       </p>
