@@ -48,20 +48,20 @@ const ContactForm = () => {
       {/* Formulario */}
       <div className="contactanos-form">
         <form className="contact-form">
-          <label htmlFor="nombre">Nombre</label>
+          
           <input type="text" id="nombre" className="contact-input" placeholder="Nombre" />
 
-          <label htmlFor="email">Correo electrónico</label>
+          
           <input type="email" id="email" className="contact-input" placeholder="Correo electrónico" />
 
-          <label htmlFor="categoria">Categoría</label>
+          
           <select id="categoria" className="contact-input">
             <option value="" disabled selected>Selecciona una categoría</option>
             <option value="soporte">Soporte</option>
             <option value="consulta">Consulta</option>
           </select>
 
-          <label htmlFor="mensaje">Mensaje</label>
+          
           <textarea id="mensaje" className="contact-textarea" placeholder="Escribe tu mensaje aquí..."></textarea>
 
           <button type="submit" className="contact-button">Enviar</button>
