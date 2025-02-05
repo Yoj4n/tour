@@ -1,20 +1,20 @@
-.contact-container {
+.contactanos-container {
     display: flex;
     justify-content: space-between;
     padding: 20px;
     background-color: #f4f8fc;
 }
 
-.contact-info {
+.contactanos-info {
     width: 45%;
 }
 
-.contact-info h2 {
+.contactanos-info h2 {
     font-size: 24px;
     color: #003366;
 }
 
-.contact-info p {
+.contactanos-info p {
     font-size: 14px;
     color: #666;
 }
@@ -48,7 +48,7 @@
     background-color: #003366;
 }
 
-.contact-form {
+.contactanos-form {
     width: 45%;
     background: #eaf2fb;
     padding: 20px;

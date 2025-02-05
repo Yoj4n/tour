@@ -4,8 +4,8 @@ import "../../styles/Contact/ContactoFrom.css";
 
 const ContactForm = () => {
   return (
-    <div className="contact-container">
-      <div className="contact-info">
+    <div className="contactanos-container">
+      <div className="contactanos-info">
         <h2>GET IN TOUCH</h2>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -26,7 +26,7 @@ const ContactForm = () => {
         <div className="map-placeholder"></div>
       </div>
 
-      <div className="contact-form">
+      <div className="contactanos-form">
         <input type="text" placeholder="Nombre" className="input-field" />
         <input type="email" placeholder="Email" className="input-field" />
         <select className="input-field">
