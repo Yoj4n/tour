@@ -31,16 +31,17 @@ label {
   color: #004080;
   margin-bottom: 5px;
   display: block;
+  text-align: left;
 }
 
 /* Campos de entrada */
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
+input[type="text"].input-dataP,
+input[type="email"].input-dataP,
+input[type="tel"].input-dataP{
   width: 100%; /* Se ajusta al contenedor padre */
   max-width: 250px; /* Limita el ancho máximo para evitar desbordamiento */
   padding: 10px 12px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 8px;
   background-color: #f9f9f9;
   transition: border 0.3s, background-color 0.3s;
