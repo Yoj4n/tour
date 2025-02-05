@@ -53,8 +53,8 @@ const DatosPersonales = ({ avanzar, actualizarDatos }) => {
         </div>
 
         <div className="button-group">
-          <button type="button" className="cancelar" onClick={handleCancel}>Cancelar</button>
-          <button type="button" className="continuar" onClick={handleContinue}>Continuar</button>
+          <button type="button" className="btnData cancelar" onClick={handleCancel}>Cancelar</button>
+          <button type="button" className="btnData continuar" onClick={handleContinue}>Continuar</button>
         </div>
       </form>
     </div>

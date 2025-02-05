@@ -32,6 +32,7 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
             name="fechaReserva"
             value={reserva.fechaReserva}
             onChange={manejarCambio}
+            className="input-reservaDate"
           />
 
           <label>Adultos</label>
