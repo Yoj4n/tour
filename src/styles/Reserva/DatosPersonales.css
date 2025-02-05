@@ -60,7 +60,7 @@ input:focus {
 /* Botones */
 .button-group {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 10px;
 }
 
@@ -109,9 +109,9 @@ button:hover {
     max-width: 100%; /* Ajusta el ancho de los inputs en móviles */
   }
 
-  button {
+  /* button {
     width: 100%;
-  }
+  } */
 
   .button-group {
     flex-direction: column;
