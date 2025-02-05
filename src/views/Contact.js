@@ -1,12 +1,16 @@
-import React from 'react';
-import '../styles/Contact.css';
+import React from "react";
+import "../styles/Contact.css";
 
+import Contacto from "../components/Contact/ContactoFrom.js";
+import Banner from "../components/Contact/Banner.js";
 function Contact() {
   return (
-    <div className="contact">
-      <h2>Contact Us</h2>
+    <div className="">
       
-      <p>We’d love to hear from you! Reach out to us anytime.</p>
+      <Banner />
+      <div className="contact">
+        <Contacto />
+      </div>
     </div>
   );
 }

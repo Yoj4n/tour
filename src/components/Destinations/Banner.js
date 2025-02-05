@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Destinations/Banner.css";
+import "../../styles/Contact/Banner.css";
 
 const Banner = () => {
   return (

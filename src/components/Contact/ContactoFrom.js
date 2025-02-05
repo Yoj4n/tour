@@ -14,7 +14,7 @@ const ContactForm = () => {
         </p>
         <p className="phone-number">002-010-66269735</p>
         
-        {/* Redes Sociales */}
+        
         <div className="social-icons">
           <a href="#" className="icon"><FaFacebookF /></a>
           <a href="#" className="icon"><FaInstagram /></a>
@@ -22,7 +22,7 @@ const ContactForm = () => {
           <a href="#" className="icon"><FaWhatsapp /></a>
         </div>
 
-        {/* Placeholder para el mapa */}
+        
         <div className="map-placeholder"></div>
       </div>
 
