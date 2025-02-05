@@ -22,7 +22,7 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
 
   return (
     <div className="confirmacion-container">
-      <h2>Confirmación de Reserva</h2>
+      <h2 className="h2-confirmacion">Confirmación de Reserva</h2>
 
       <div className="form-resumen-container">
         <div className="confirmacion-form">

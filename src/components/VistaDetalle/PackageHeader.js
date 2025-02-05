@@ -14,7 +14,7 @@ const PackageHeader = ({title, rating}) => {
         </div>
       </div>
       
-      <div className="package-price">
+      <div className="package-price-header">
         <span className="price">$750</span>
         <span className="per-person">/ per person</span>
       </div>

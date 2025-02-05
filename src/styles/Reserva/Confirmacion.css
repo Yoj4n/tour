@@ -8,7 +8,7 @@
   /* padding: 20px; */
 }
 
-h2 {
+h2.h2-confirmacion {
   color: #2d5d8a;
   text-align: center;
   font-size: clamp(20px, 2.5vw, 28px);

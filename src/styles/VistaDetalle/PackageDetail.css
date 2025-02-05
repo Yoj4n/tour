@@ -5,34 +5,34 @@
     /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
   }
   
-  .package-title h2 {
+  /* .package-title h2 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
   }
-  
+   */
   .rating-start {
     background: url('https://cdn-icons-png.flaticon.com/512/16/16666.png') repeat-x;
     height: 16px;
     width: 80px;
   }
   
-  .package-price {
+  /* .package-price {
     text-align: right;
-  }
-  
+  } */
+/*   
   .package-meta ul {
     margin: 15px 0px;
     list-style: none;
     padding: 0;
     display: flex;
     gap: 16px;
-  }
+  } */
   
-  .package-meta li {
+  /* .package-meta li.li-Meta {
     font-size: clamp(12px, 4vw, 20px);
     color: #666;
-  }
+  } */
   
   .single-package-image img {
     width: 100%;

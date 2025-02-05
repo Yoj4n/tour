@@ -32,22 +32,22 @@ const DatosPersonales = ({ avanzar, actualizarDatos }) => {
       <form>
         <div className="form-row">
           <div className="form-group">
-            <label>NOMBRES</label>
+            <label className='label-dataP'>NOMBRES</label>
             <input type="text" name="nombres" placeholder="Nombre" value={formData.nombres} onChange={handleChange} required className='input-dataP'/>
           </div>
           <div className="form-group">
-            <label>APELLIDOS</label>
+            <label className='label-dataP'>APELLIDOS</label>
             <input type="text" name="apellidos" placeholder="Apellido" value={formData.apellidos} onChange={handleChange} required className='input-dataP' />
           </div>
         </div>
 
         <div className="form-row">
           <div className="form-group">
-            <label>CORREO ELECTRÓNICO</label>
+            <label className='label-dataP'>CORREO ELECTRÓNICO</label>
             <input type="email" name="correo" placeholder="Email" value={formData.correo} onChange={handleChange} required  className='input-dataP'/>
           </div>
           <div className="form-group">
-            <label>CELULAR</label>
+            <label className='label-dataP'>CELULAR</label>
             <input type="tel" name="celular" placeholder="Celular" value={formData.celular} onChange={handleChange} required className='input-dataP' />
           </div>
         </div>

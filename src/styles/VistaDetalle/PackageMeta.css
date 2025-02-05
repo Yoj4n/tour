@@ -1,15 +1,16 @@
-.package-meta ul {
+.package-meta ul.ul-Meta {
+  flex-wrap: wrap;
   display: flex;
   gap: 20px;
   list-style: none;
-  padding: 0;
+  padding: 25px;
   margin: 0;
   font-size: 14px;
   align-items: center;
   color: #555;
 }
 
-.package-meta li {
+.package-meta li.li-Meta {
   display: flex;
   align-items: center;
   gap: 5px;

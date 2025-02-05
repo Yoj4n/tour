@@ -12,10 +12,10 @@ const ContactForm = () => {
         <p className="phone-number">002-010-66269735</p>
 
         <div className="social-icons">
-          <a href="#" className="icon"><FaFacebookF /></a>
-          <a href="#" className="icon"><FaInstagram /></a>
-          <a href="#" className="icon"><FaYoutube /></a>
-          <a href="#" className="icon"><FaWhatsapp /></a>
+          <a href="#" className="icon-contact"><FaFacebookF /></a>
+          <a href="#" className="icon-contact"><FaInstagram /></a>
+          <a href="#" className="icon-contact"><FaYoutube /></a>
+          <a href="#" className="icon-contact"><FaWhatsapp /></a>
         </div>
 
 

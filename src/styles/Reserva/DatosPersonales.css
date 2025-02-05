@@ -26,7 +26,7 @@
 }
 
 /* Etiquetas */
-label {
+label.label-dataP{
   font-weight: bold;
   color: #004080;
   margin-bottom: 5px;

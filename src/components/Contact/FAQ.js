@@ -11,9 +11,10 @@ const FAQ = () => {
 
   return (
     <div className="faq-container">
-      <h2>PREGUNTAS Y RESPUESTAS FRECUENTES</h2>
+      <h2 className="h2-fqa">PREGUNTAS Y RESPUESTAS FRECUENTES</h2>
       <p className="faq-intro">
-      En esta sección encontrarás respuestas a las preguntas más comunes sobre nuestros servicios y el destino turístico del Guaviare.
+      En esta sección encontrarás respuestas a las preguntas más comunes 
+      sobre nuestros servicios y el destino turístico del Guaviare.
       </p>
 
       {faqData.map((item, index) => (
