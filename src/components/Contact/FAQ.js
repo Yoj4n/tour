@@ -13,7 +13,7 @@ const FAQ = () => {
     <div className="faq-container">
       <h2>PREGUNTAS Y RESPUESTAS FRECUENTES</h2>
       <p className="faq-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonumy eirmod tempor invidunt...
+      En esta sección encontrarás respuestas a las preguntas más comunes sobre nuestros servicios y el destino turístico del Guaviare.
       </p>
 
       {faqData.map((item, index) => (

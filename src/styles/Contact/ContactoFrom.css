@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    padding: 20px;
+    padding: 30px;
     background: #ffffff;
     gap: 30px;
   }
@@ -24,6 +24,11 @@
     color: #007bff;
     margin-bottom: 10px;
   }
+
+  .contact-info p {
+    text-align: left;
+    margin: 15px;
+}
   
   .phone-number {
     font-weight: bold;

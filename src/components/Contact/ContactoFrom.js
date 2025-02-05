@@ -8,7 +8,7 @@ const ContactForm = () => {
 
       <div className="contact-info">
         <h2>PONTE EN CONTACTO 📞</h2>
-        <p>¿Tienes dudas o necesitas ayuda? Escríbenos y te responderemos.</p>
+        <p>Estamos aquí para ayudarte. Si tienes alguna consulta, duda o necesitas asistencia, no dudes en comunicarte con nosotros. Nuestro equipo estará encantado de atenderte y brindarte la mejor solución posible.</p>
         <p className="phone-number">002-010-66269735</p>
 
         <div className="social-icons">
