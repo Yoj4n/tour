@@ -1,8 +1,8 @@
-.contact-container {
+.contact-container-footer {
     min-width: 250px;
   }
   
-  .contact-title {
+  .contact-title-footer {
     font-size: 18px;
     font-weight: bold;
     color: #1e3a56;
@@ -10,7 +10,7 @@
     display: inline-block;
   }
   
-  .contact-item {
+  .contact-item-footer {
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -18,7 +18,7 @@
     margin: 5px 0;
   }
   
-  .contact-item svg {
+  .contact-item-footer svg {
     margin-right: 10px;
     color: #1e3a56;
   }

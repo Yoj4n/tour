@@ -1,0 +1,66 @@
+.datos-personales-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; /* Reduce el espacio entre columnas */
+    padding: 15px;
+    border: 1px solid #ccc; /* Borde alrededor del formulario */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    background-color: #fff;
+    width: 52%; /* Reduce el tamaño total del formulario */
+    margin: 0px auto;
+}
+
+.input-group-dataPerson {
+    display: flex;
+    flex-direction: column;
+    width: 95%; /* Hace que los grupos de input sean más compactos */
+    max-width: 250px; /* Limita el tamaño máximo */
+    margin: auto;
+}
+
+.input-group-dataPerson label {
+  
+    color: #2387b1;
+    font-size: 13px; 
+    margin-bottom: 3px; 
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.input-group-dataPerson input {
+    width: 93%; 
+    padding: 6px; 
+    border: none ;
+    border-radius: 30px;
+    background-color: #e0e0e067;
+    font-size: 12px; 
+}
+.botones {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 10px; 
+    grid-column: 1 / -1;
+}
+
+.cancelar, .continuar {
+    padding: 4px 6px; 
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px; 
+    width: 20%; 
+    text-align: center; 
+}
+
+.cancelar {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+}
+
+.continuar {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
