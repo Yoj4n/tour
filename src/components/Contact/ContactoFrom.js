@@ -11,7 +11,6 @@ const ContactForm = () => {
         <p>¿Tienes dudas o necesitas ayuda? Escríbenos y te responderemos.</p>
         <p className="phone-number">002-010-66269735</p>
 
-        {/* Redes sociales */}
         <div className="social-icons">
           <a href="#" className="icon"><FaFacebookF /></a>
           <a href="#" className="icon"><FaInstagram /></a>
@@ -19,7 +18,7 @@ const ContactForm = () => {
           <a href="#" className="icon"><FaWhatsapp /></a>
         </div>
 
-        {/* Mapa */}
+
         <div className="map-container">
           <iframe
             src="https://www.google.com/maps/embed?..."
@@ -29,7 +28,7 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Formulario de Contacto */}
+
       <div className="contact-form-container">
         <form className="contact-form">
           <input type="text" id="nombre" className="contact-input" placeholder="Tu nombre" />

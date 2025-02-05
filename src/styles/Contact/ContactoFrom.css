@@ -1,4 +1,4 @@
-/* Contenedor principal con diseño responsive */
+
 .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -10,11 +10,11 @@
     gap: 30px;
   }
   
-  /* Sección de información */
+
   .contact-info {
-    flex: 1;
-    min-width: 280px;
-    max-width: 450px;
+    flex: 2;
+    min-width: 350px;
+    max-width: 600px;
     text-align: center;
     color: #333;
   }
