@@ -166,3 +166,10 @@ svg.input-icon-u{
 .name-row .auth-input {
   width: 65%;
 }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
