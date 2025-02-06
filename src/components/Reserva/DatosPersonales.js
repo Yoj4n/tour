@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import '../../styles/Reserva/DatosPersonales.css';
 
-import { useLocation } from "react-router-dom"; // Importamos useLocation
+import { useLocation , useNavigate} from "react-router-dom"; // Importamos useLocation
 import "../../styles/Reserva/DatosPersonales.css";
 
-const DatosPersonales = () => {
+const DatosPersonales = ({ avanzar, actualizarDatos }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { nombre, email } = location.state || {}; 
 
   const [formData, setFormData] = useState({
@@ -22,7 +23,8 @@ const DatosPersonales = () => {
   const handleContinue = (e) => {
     e.preventDefault();
     if (Object.values(formData).every(field => field.trim() !== "")) {
-      alert("Datos enviados correctamente.");
+      actualizarDatos(formData);
+      avanzar();
     } else {
       alert("Por favor, completa todos los campos.");
     }
@@ -30,6 +32,7 @@ const DatosPersonales = () => {
 
   const handleCancel = () => {
     setFormData({ nombres: '', apellidos: '', correo: '', celular: '' });
+    navigate("/");
   };
 
   return (
