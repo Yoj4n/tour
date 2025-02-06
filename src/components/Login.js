@@ -14,11 +14,11 @@ const AuthForm = () => {
   const [errorMessage, setErrorMessage] = useState(""); // Para mostrar errores
   const navigate = useNavigate();
 
-  // Verificar si hay sesión activa al cargar el componente
+  
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
     if (savedUser) {
-      navigate("/home");
+      navigate("/");
     }
   }, [navigate]);
 
