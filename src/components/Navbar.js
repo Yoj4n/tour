@@ -39,7 +39,7 @@ function Navbar() {
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/about">Sobre Nosotros</Link></li>
               <li><Link to="/destinations">Servicios Turísticos</Link></li>
-              <li><Link to="/reserva">Información Turística</Link></li>
+              <li><Link to="/infoTuristica">Información Turística</Link></li>
               <li><Link to="/contact">Contáctenos</Link></li>
             </ul>
             <Link to="/login">

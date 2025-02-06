@@ -8,10 +8,10 @@ import Packages from '../src/views/Packages';
 import Contact from '../src/views/Contact';
 import Navbar from '../src/components/Navbar.js';
 import Login from '../src/components/Login.js';
-
+import InfoTuristica from '../src/views/InfoTuristica.js';
 import VistaDetalle from './views/VistaDetalle.js';
 import Cart from './views/Cart.js';
-import ContactForm from './components/Contact/ContactoFrom.js';
+// import ContactForm from './components/Contact/ContactoFrom.js';
 import Reserva from './views/Reserva.js';
 
 
@@ -32,6 +32,7 @@ function App() {
           <Route path='/cart'element={<Cart/>}/>
           <Route path='/contact'element={<Contact/>}/>
           <Route path='/reserva'element={<Reserva/>}/>
+          <Route path='/infoTuristica' element={<InfoTuristica/>}/> 
         </Routes>
       </main>
       <Footer />
