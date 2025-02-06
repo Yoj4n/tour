@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importamos useNavigate
+import { useNavigate } from "react-router-dom";
 import "../../styles/VistaDetalle/BookingForm.css";
 
 function BookingForm() {
@@ -9,7 +9,7 @@ function BookingForm() {
     checkIn: "",
   });
 
-  const navigate = useNavigate(); // Hook para redirigir
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,8 +18,14 @@ function BookingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.nombre && formData.email && formData.checkIn) {
-      // Redirigir a /reserva pasando datos en el estado
-      navigate("/reserva", { state: { nombre: formData.nombre, email: formData.email } });
+      // Verifica si existe un sessionStorage (ajusta la clave según cómo guardas los datos)
+      const sessionUser = sessionStorage.getItem("user");
+
+      if (sessionUser) {
+        navigate("/reserva", { state: { nombre: formData.nombre, email: formData.email } });
+      } else {
+        navigate("/login");
+      }
     } else {
       alert("Por favor, completa todos los campos.");
     }
@@ -37,13 +43,11 @@ function BookingForm() {
         </div>
         <div className="input-group">
           <label>Check-in Date</label>
-          
-            <input type="date" required />
+          <input type="date" name="checkIn" value={formData.checkIn} onChange={handleChange} required />
         </div>
         <div className="input-group">
           <label>Check-out Date</label>
-          <input type="date" name="checkIn" value={formData.checkIn} onChange={handleChange} required />
-          
+          <input type="date" name="checkOut" required />
         </div>
         <button type="submit" className="submit-btn">INQUIRY NOW</button>
       </form>
@@ -52,3 +56,4 @@ function BookingForm() {
 }
 
 export default BookingForm;
+
