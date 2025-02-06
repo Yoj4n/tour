@@ -19,6 +19,7 @@
    */
   .container-info {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
     justify-content: center;
@@ -39,6 +40,9 @@
   @media (max-width: 600px) { 
     .steps-grid {
       grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+    }
+    .step-card {
+      width: 260px;
     }
   }
   

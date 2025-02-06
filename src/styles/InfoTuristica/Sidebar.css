@@ -20,6 +20,7 @@
 } */
 
 .sidebar {
+  justify-content: space-around;
   width: 250px;
   background-color: white;
   padding: 15px;
