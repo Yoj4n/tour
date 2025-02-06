@@ -37,7 +37,13 @@ function BookingForm() {
         </div>
         <div className="input-group">
           <label>Check-in Date</label>
+          
+            <input type="date" required />
+        </div>
+        <div className="input-group">
+          <label>Check-out Date</label>
           <input type="date" name="checkIn" value={formData.checkIn} onChange={handleChange} required />
+          
         </div>
         <button type="submit" className="submit-btn">INQUIRY NOW</button>
       </form>

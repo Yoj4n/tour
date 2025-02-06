@@ -4,35 +4,46 @@ import StepCard from "../components/InformacionTuristica/StepCard";
 import Sidebar from "../components/InformacionTuristica/Sidebar";
 import "../styles/InfoTuristica/InfoTuristica.css";
 import Banner from "../components/InformacionTuristica/Banner";
+// import Banner from "../components/InformacionTuristica/Banner";
 
 const MainLayout = () => {
   const steps = [
     {
       title: "Cerros de Mavicure",
       description:
-        "Descubre los imponentes cerros de Mavicure, formaciones rocosas ancestrales con una vista espectacular.",
+        "Montañas icónicas de roca negra. Requiere permiso especial para visita y un guía certificado.",
     },
     {
       title: "Puerta de Orión",
       description:
-        "Un enorme arco natural de piedra con una impresionante vista nocturna del cielo estrellado.",
+        "Formación rocosa con una vista espectacular del cielo. Ideal para fotografía nocturna.",
     },
     {
       title: "Caño Lajas",
       description:
-        "Un río con aguas cristalinas y cascadas perfectas para disfrutar de la naturaleza.",
+        "Río con cascadas cristalinas. Mejor época de visita: entre mayo y noviembre.",
     },
     {
       title: "Pinturas Rupestres",
       description:
-        "Maravíllate con los antiguos petroglifos dejados por las culturas indígenas en las rocas del Guaviare.",
+        "Arte prehistórico de más de 10,000 años de antigüedad. Accesible con caminatas guiadas.",
+    },
+    {
+      title: "Ciudad de Piedra",
+      description:
+        "Formaciones rocosas con formas únicas. Llevar protector solar y zapatos cómodos.",
+    },
+    {
+      title: "Río Guaviare",
+      description:
+        "Navegación con delfines rosados. Evita la visita en época de lluvias intensas.",
     },
   ];
 
   return (
     <>
-    <Banner />
-      <div className="container-infoturistica">
+      <Banner />
+      <div className="container-info">
         <div className="steps-grid">
           {steps.map((step, index) => (
             <StepCard

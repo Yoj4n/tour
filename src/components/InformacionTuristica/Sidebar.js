@@ -1,6 +1,8 @@
 import React from "react";
 import "../../styles/InfoTuristica/Sidebar.css";
 
+
+
 const Sidebar = () => {
   return (
     <aside className="sidebar">
@@ -9,22 +11,22 @@ const Sidebar = () => {
         <img src="logo.png" alt="Tour El Caminante" />
       </div>
       <p>
-        Explora la maravillosa biodiversidad del Guaviare, conoce sus ríos,
-        pinturas rupestres y naturaleza única.
+        Descubre los mejores destinos del Guaviare, un paraíso de biodiversidad
+        y cultura ancestral.
       </p>
-      <h3>INFORMACIÓN AGREGADA RECIENTEMENTE</h3>
+      <h3>INFORMACIÓN RECIENTE</h3>
       <ul>
         <li>
-          <a href="#">BEST JOURNEY TO PEACEFUL PLACES</a>
-          <span>February 17, 2022</span>
+          <a href="#">Cerros de Mavicure</a>
+          <span>Actualizado en 2025</span>
         </li>
         <li>
-          <a href="#">BEST JOURNEY TO PEACEFUL PLACES</a>
-          <span>February 17, 2022</span>
+          <a href="#">Puerta de Orión</a>
+          <span>Actualizado en 2025</span>
         </li>
         <li>
-          <a href="#">BEST JOURNEY TO PEACEFUL PLACES</a>
-          <span>February 17, 2022</span>
+          <a href="#">Caño Lajas</a>
+          <span>Actualizado en 2025</span>
         </li>
       </ul>
     </aside>

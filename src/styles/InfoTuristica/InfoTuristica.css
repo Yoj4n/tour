@@ -1,4 +1,4 @@
-
+/* 
   .container-infoturistica {
     display: flex;
     gap: 20px;
@@ -6,10 +6,27 @@
     justify-content: center;
     background-color: #f4f4f4;
   }
+   */
+ 
+  /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+   */
+  .container-info {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
   
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
   }
   

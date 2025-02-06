@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/InfoTuristica/StepCard.css";
 
+
 const StepCard = ({ title, description }) => {
   return (
     <div className="step-card">
@@ -15,3 +16,5 @@ const StepCard = ({ title, description }) => {
 };
 
 export default StepCard;
+
+

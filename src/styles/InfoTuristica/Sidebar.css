@@ -1,54 +1,53 @@
 .sidebar {
-    width: 300px;
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sidebar h2,
-  .sidebar h3 {
-    color: #0b5394;
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  .sidebar-logo img {
-    width: 100%;
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .sidebar p {
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  .sidebar ul li a {
-    color: #0b5394;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .sidebar ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .sidebar ul li span {
-    display: block;
-    font-size: 12px;
-    color: gray;
-  }
-  
+  width: 250px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2,
+.sidebar h3 {
+  color: #0b5394;
+  font-size: 16px;
+  text-align: center;
+}
+
+.sidebar-logo img {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+
+.sidebar p {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: #0b5394;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.sidebar ul li span {
+  display: block;
+  font-size: 12px;
+  color: gray;
+}
