@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/InfoTuristica/Sidebar.css";
-
+import logo from '../../images/tourelcaminanteAzulVertical.png';
 
 
 const Sidebar = () => {
@@ -8,7 +8,7 @@ const Sidebar = () => {
     <aside className="sidebar">
       <h2>ABOUT TOUR EL CAMINANTE</h2>
       <div className="sidebar-logo">
-        <img src="logo.png" alt="Tour El Caminante" />
+        <img src={logo} alt="Tour El Caminante" />
       </div>
       <p>
         Descubre los mejores destinos del Guaviare, un paraíso de biodiversidad
