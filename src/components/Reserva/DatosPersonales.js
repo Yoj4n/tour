@@ -7,11 +7,13 @@ import "../../styles/Reserva/DatosPersonales.css";
 const DatosPersonales = ({ avanzar, actualizarDatos }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { nombre, email } = location.state || {}; 
+  
+
+  const { username, lastname, email } = location.state || {};
 
   const [formData, setFormData] = useState({
-    nombres: nombre || "",
-    apellidos: "",
+    nombres: username || "",
+    apellidos: lastname || "",
     correo: email || "",
     celular: "",
   });
@@ -65,6 +67,7 @@ const DatosPersonales = ({ avanzar, actualizarDatos }) => {
           <button type="button" className="btnData continuar" onClick={handleContinue}>Continuar</button>
         </div>
       </form>
+      
     </div>
   );
 };

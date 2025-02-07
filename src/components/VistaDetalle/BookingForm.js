@@ -18,13 +18,12 @@ function BookingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.nombre && formData.email && formData.checkIn) {
-      // Verifica si existe un sessionStorage (ajusta la clave según cómo guardas los datos)
       const sessionUser = sessionStorage.getItem("user");
 
       if (sessionUser) {
         navigate("/reserva", { state: { nombre: formData.nombre, email: formData.email } });
       } else {
-        navigate("/login");
+        navigate("/login", { state: { nombre: formData.nombre, email: formData.email } });
       }
     } else {
       alert("Por favor, completa todos los campos.");

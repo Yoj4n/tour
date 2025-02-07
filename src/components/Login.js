@@ -1,57 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FiUser, FiMail, FiLock } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import useAuthForm from "../hooks/useLoginFrom.js";
 import "../styles/Login.css";
 
 const AuthForm = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const [formData, setFormData] = useState({
-    username: "",
-    lastname: "",
-    email: "",
-    password: "",
-  });
-  const [errorMessage, setErrorMessage] = useState(""); // Para mostrar errores
-  const navigate = useNavigate();
-
-  
-  useEffect(() => {
-    const savedUser = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
-    if (savedUser) {
-      navigate("/");
-    }
-  }, [navigate]);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrorMessage(""); 
-
-    if (isLogin) {
-      const savedUser = JSON.parse(localStorage.getItem("user"));
-
-      if (!savedUser) {
-        setErrorMessage("Este usuario no está registrado.");
-        return;
-      }
-
-      if (savedUser.email === formData.email && savedUser.password === formData.password) {
-        sessionStorage.setItem("user", JSON.stringify(savedUser)); 
-        alert("Inicio de sesión exitoso");
-        navigate("/");
-      } else {
-        setErrorMessage("Credenciales incorrectas.");
-      }
-    } else {
-      localStorage.setItem("user", JSON.stringify(formData));
-      sessionStorage.setItem("user", JSON.stringify(formData));
-      alert("Registro exitoso");
-      navigate("/");
-    }
-  };
+  const { isLogin, setIsLogin, formData, handleChange, handleSubmit, errorMessage } = useAuthForm();
 
   return (
     <div className="auth-container">
@@ -93,11 +46,10 @@ const AuthForm = () => {
             </button>
           </p>
         </div>
-
-        {!isLogin && <p className="terms-text">Al registrarte, aceptas nuestros términos y condiciones de uso.</p>}
       </div>
     </div>
   );
 };
 
 export default AuthForm;
+
