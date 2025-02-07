@@ -45,7 +45,7 @@ const useLoginForm = () => {
     } else {
       localStorage.setItem("user", JSON.stringify(formData));
       sessionStorage.setItem("user", JSON.stringify(formData));
-      navigate("/reserva", { state: { username: formData.username, lastname: formData.lastname, email: formData.email } });
+      navigate("/", { state: { username: formData.username, lastname: formData.lastname, email: formData.email } });
     }
   };
 
