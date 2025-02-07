@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import useNavbarState from "../hooks/useNavbarState";
 
 function Navbar() {
   const { isMobile, menuOpen, toggleMenu, isScrolled } = useNavbarState();
+  const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Verificar si hay un usuario en sessionStorage
-    const storedUser = sessionStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser)); // Convertir a objeto
-    }
-  }, []);
+    const checkUser = () => {
+      const storedUser = sessionStorage.getItem("user");
+      setUser(storedUser ? JSON.parse(storedUser) : null);
+    };
+    
+    checkUser();
+    window.addEventListener('storage', checkUser);
+    return () => window.removeEventListener('storage', checkUser);
+  }, [location]); 
 
   const handleLogout = () => {
-    sessionStorage.removeItem("user"); // Eliminar usuario de sessionStorage
+    sessionStorage.removeItem("user");
     setUser(null);
-    window.location.reload(); // Recargar la página para aplicar cambios
+    window.dispatchEvent(new Event('storage')); 
   };
 
   return (
@@ -44,7 +48,7 @@ function Navbar() {
                     className="dropdown-toggle-usuario" 
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                   >
-                    {user.nombre} {user.apellido} ▼
+                    {user.username} {user.lastname} ▼
                   </button>
                   {dropdownOpen && (
                     <ul className="dropdown-menu-usuario">
@@ -78,7 +82,7 @@ function Navbar() {
                   className="dropdown-toggle-usuario" 
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
-                  {user.nombre} {user.apellido} ▼
+                  {user.username} {user.lastname} ▼
                 </button>
                 {dropdownOpen && (
                   <ul className="dropdown-menu-usuario">
