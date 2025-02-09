@@ -17,9 +17,9 @@ function Navbar() {
   }, []);
 
   const handleLogout = () => {
-    sessionStorage.removeItem("user"); // Eliminar usuario de sessionStorage
+    sessionStorage.clear();    
     setUser(null);
-    window.location.reload(); // Recargar la página para aplicar cambios
+    // window.location.reload(); // Recargar la página para aplicar cambios
   };
 
   return (
@@ -39,15 +39,15 @@ function Navbar() {
               <li><Link to="/infoTuristica">Información Turística</Link></li>
               <li><Link to="/contact">Contáctenos</Link></li>
               {user ? (
-                <li className="dropdown-usuario">
+                <li className="dropdown">
                   <button 
-                    className="dropdown-toggle-usuario" 
+                    className="dropdown-toggle" 
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                   >
-                    {user.nombre} {user.apellido} ▼
+                    {user.username} {user.lastname} ▼
                   </button>
                   {dropdownOpen && (
-                    <ul className="dropdown-menu-usuario">
+                    <ul className="dropdown-menu-user">
                       <li><Link to="/perfil">Perfil</Link></li>
                       <li><Link to="/reservas">Reservas</Link></li>
                       <li><button onClick={handleLogout}>Cerrar Sesión</button></li>
@@ -73,15 +73,15 @@ function Navbar() {
               <li><Link to="/contact">Contáctenos</Link></li>
             </ul>
             {user ? (
-              <div className="dropdown-usuario">
+              <div className="dropdown">
                 <button 
-                  className="dropdown-toggle-usuario" 
+                  className="dropdown-toggle" 
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
-                  {user.nombre} {user.apellido} ▼
+                  {user.username} {user.lastname} ▼
                 </button>
                 {dropdownOpen && (
-                  <ul className="dropdown-menu-usuario">
+                  <ul className="dropdown-menu-user">
                     <li><Link to="/perfil">Perfil</Link></li>
                     <li><Link to="/reservas">Reservas</Link></li>
                     <li><button onClick={handleLogout}>Cerrar Sesión</button></li>
