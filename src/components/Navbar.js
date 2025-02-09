@@ -10,17 +10,19 @@ function Navbar() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const handleLoginClick = () => {
-    navigate("/login"); // Asegura que está llamando correctamente a la ruta
+    navigate("/login"); 
   };
-
+  
 
   useEffect(() => {
     const checkUser = () => {
       const storedUser = sessionStorage.getItem("user");
       setUser(storedUser ? JSON.parse(storedUser) : null);
+      setDropdownOpen(false);
     };
     
     checkUser();
+    
     window.addEventListener('storage', checkUser);
     return () => window.removeEventListener('storage', checkUser);
   }, [location]); 
@@ -29,6 +31,7 @@ function Navbar() {
     sessionStorage.removeItem("user");
     setUser(null);
     window.dispatchEvent(new Event('storage')); 
+    navigate("/");
   };
 
   return (
@@ -50,7 +53,7 @@ function Navbar() {
               {user ? (
                 <li className="dropdown">
                   <button 
-                    className="dropdown-toggle" 
+                    className="dropdown-toggle-user" 
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                   >
                     {user.username} {user.lastname} ▼
@@ -82,7 +85,7 @@ function Navbar() {
             {user ? (
               <div className="dropdown">
                 <button 
-                  className="dropdown-toggle" 
+                  className="dropdown-toggle-user" 
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                 >
                   {user.username} {user.lastname} ▼

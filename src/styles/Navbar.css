@@ -18,7 +18,7 @@
 }
 
 .navbar.scrolled a,
-.navbar.scrolled  {
+.navbar.scrolled {
   font-weight: bold;
   color: #1e3a56 !important;
 }
@@ -27,6 +27,15 @@
   color: white !important;
 }
 
+.navbar.scrolled .dropdown{
+  color: #1e3a56;
+
+}
+
+.navbar.scrolled .dropdown-menu-user li a{
+  color: white !important;
+
+}
 .navbar .container {
   display: flex;
   justify-content: space-between;
@@ -141,19 +150,26 @@
 
 }
 
+.navbar .nav-links-mobile.active .dropdown-menu-user{
+  margin-top: 5px;
+  position: relative !important;
+}
+.navbar .nav-links-mobile.active .dropdown-menu-user li a{
+  padding: 0px ;
+}
 .dropdown-usuario {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-toggle-usuario {
+/* .dropdown-toggle-usuario {
   background: none;
   border: none;
   color: inherit;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-}
+} */
 
 .dropdown-menu-usuario {
   /* position: absolute; */
@@ -187,14 +203,14 @@
 
 .dropdown-menu-usuario li button:hover,
 .dropdown-menu-usuario li a:hover {
-  background: #f0f0f0;
+  background: #ff1515;
 }
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-toggle {
+.dropdown-toggle-user{
   background: none;
   border: none;
   color: inherit;
@@ -232,10 +248,12 @@
   cursor: pointer;
   width: 100%;
   display: block;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .dropdown-menu-user li button:hover,
 .dropdown-menu-user li a:hover {
-  background: #3033fc;
+  color: blue;
   padding: 5px;
 }
