@@ -4,7 +4,7 @@ import "../../styles/VistaDetalle/BookingForm.css";
 
 function BookingForm() {
   const [formData, setFormData] = useState({
-    nombre: "",
+    username: "",
     email: "",
     checkIn: "",
   });
@@ -17,13 +17,19 @@ function BookingForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.nombre && formData.email && formData.checkIn) {
+    if (formData.username && formData.email && formData.checkIn) {
       const sessionUser = sessionStorage.getItem("user");
 
       if (sessionUser) {
-        navigate("/reserva", { state: { nombre: formData.nombre, email: formData.email } });
+        navigate("/reserva", { state: { username: formData.username, email: formData.email } });
       } else {
-        navigate("/login", { state: { nombre: formData.nombre, email: formData.email } });
+        navigate("/login", { 
+          state: { 
+            username: formData.username, 
+            email: formData.email, 
+            fromBooking: true, 
+          } 
+        });
       }
     } else {
       alert("Por favor, completa todos los campos.");
@@ -35,7 +41,7 @@ function BookingForm() {
       <h3 className="form-title">BOOKING FORM</h3>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <input type="text" name="nombre" placeholder="Your Name..." value={formData.nombre} onChange={handleChange} required />
+          <input type="text" name="username" placeholder="Your Name..." value={formData.username} onChange={handleChange} required />
         </div>
         <div className="input-group">
           <input type="email" name="email" placeholder="Your Email..." value={formData.email} onChange={handleChange} required />
@@ -55,4 +61,3 @@ function BookingForm() {
 }
 
 export default BookingForm;
-

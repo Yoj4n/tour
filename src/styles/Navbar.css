@@ -204,7 +204,7 @@
 }
 
 .dropdown-menu-user {
-  /* position: absolute; */
+  position: absolute;
   top: 100%;
   right: 0;
   background: rgb(0, 0, 0);
@@ -214,6 +214,7 @@
   padding: 10px 0;
   width: 150px;
   display: flex;
+  z-index: 1;
   flex-direction: column;
 }
 
@@ -225,7 +226,7 @@
 .dropdown-menu-user li a,
 .dropdown-menu-user li button {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   background: none;
   border: none;
   cursor: pointer;
@@ -235,5 +236,6 @@
 
 .dropdown-menu-user li button:hover,
 .dropdown-menu-user li a:hover {
-  background: #f0f0f0;
+  background: #3033fc;
+  padding: 5px;
 }

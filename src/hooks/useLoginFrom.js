@@ -5,30 +5,14 @@ const useLoginForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     username: location.state?.username || "",
     lastname: location.state?.lastname || "",
     email: location.state?.email || "",
     password: "",
   });
-
+  const [isLogin, setIsLogin] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
-
-  // Verificar usuario existente al cargar
-  useEffect(() => {
-    const checkAuth = () => {
-      const savedUser = 
-        JSON.parse(sessionStorage.getItem("user")) || 
-        JSON.parse(localStorage.getItem("user"));
-        
-      if (savedUser) {
-        navigate("/login", { replace: true });
-      }
-    };
-    
-    checkAuth();
-  }, [navigate]);
 
   const handleChange = (e) => {
     setFormData({
@@ -53,8 +37,11 @@ const useLoginForm = () => {
           savedUser.password === formData.password
         ) {
           sessionStorage.setItem("user", JSON.stringify(savedUser));
-          
-          navigate("/reserva", {
+
+          const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
+        
+
+          navigate(redirectPath, {
             state: {
               username: savedUser.username,
               lastname: savedUser.lastname,
@@ -62,13 +49,12 @@ const useLoginForm = () => {
             },
             replace: true,
           });
-          
+
           window.dispatchEvent(new Event("storage"));
         } else {
           throw new Error("Credenciales incorrectas");
         }
       } else {
-        // Lógica de Registro
         if (!formData.username || !formData.lastname) {
           throw new Error("Nombre y apellidos son requeridos");
         }
@@ -82,12 +68,14 @@ const useLoginForm = () => {
 
         localStorage.setItem("user", JSON.stringify(userData));
         sessionStorage.setItem("user", JSON.stringify(userData));
-        
-        navigate("/", {
+
+        const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
+
+        navigate(redirectPath, {
           state: userData,
           replace: true,
         });
-        
+
         window.dispatchEvent(new Event("storage"));
       }
     } catch (error) {
