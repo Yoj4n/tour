@@ -21,7 +21,7 @@ function BookingForm() {
       const sessionUser = sessionStorage.getItem("user");
 
       if (sessionUser) {
-        navigate("/reserva", { state: { nombre: formData.nombre, email: formData.email } });
+        navigate("/", { state: { nombre: formData.nombre, email: formData.email } });
       } else {
         navigate("/login", { state: { nombre: formData.nombre, email: formData.email } });
       }
@@ -48,7 +48,7 @@ function BookingForm() {
           <label>Check-out Date</label>
           <input type="date" name="checkOut" required />
         </div>
-        <button type="submit" className="submit-btn">INQUIRY NOW</button>
+        <button type="submit" className="submit-btn">RESERVA AQUI</button>
       </form>
     </div>
   );

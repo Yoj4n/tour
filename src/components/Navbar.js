@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import useNavbarState from "../hooks/useNavbarState";
 
 function Navbar() {
   const { isMobile, menuOpen, toggleMenu, isScrolled } = useNavbarState();
+  const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Verificar si hay un usuario en sessionStorage
-    const storedUser = sessionStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser)); // Convertir a objeto
-    }
-  }, []);
+    const checkUser = () => {
+      const storedUser = sessionStorage.getItem("user");
+      setUser(storedUser ? JSON.parse(storedUser) : null);
+    };
+    
+    checkUser();
+    window.addEventListener('storage', checkUser);
+    return () => window.removeEventListener('storage', checkUser);
+  }, [location]); 
 
   const handleLogout = () => {
-    sessionStorage.clear();    
+    sessionStorage.removeItem("user"); // Eliminar usuario de sessionStorage
     setUser(null);
-    // window.location.reload(); // Recargar la página para aplicar cambios
+    window.location.reload(); // Recargar la página para aplicar cambios
   };
 
   return (

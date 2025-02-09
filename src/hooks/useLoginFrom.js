@@ -15,52 +15,95 @@ const useLoginForm = () => {
 
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Verificar usuario existente al cargar
   useEffect(() => {
-    const savedUser = JSON.parse(sessionStorage.getItem("user"));
-    if (savedUser) {
-      navigate("/"); // Redirige si ya está autenticado
-    }
+    const checkAuth = () => {
+      const savedUser = 
+        JSON.parse(sessionStorage.getItem("user")) || 
+        JSON.parse(localStorage.getItem("user"));
+        
+      if (savedUser) {
+        navigate("/", { replace: true });
+      }
+    };
+    
+    checkAuth();
   }, [navigate]);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
-    if (isLogin) {
-      const savedUser = JSON.parse(localStorage.getItem("user"));
-      if (!savedUser) {
-        setErrorMessage("Este usuario no está registrado.");
-        return;
-      }
+    try {
+      if (isLogin) {
+        const savedUser = JSON.parse(localStorage.getItem("user"));
+        if (!savedUser) {
+          throw new Error("Usuario no registrado");
+        }
 
-      if (savedUser.email === formData.email && savedUser.password === formData.password) {
-        sessionStorage.setItem("user", JSON.stringify(savedUser));
-        sessionStorage.setItem("username", savedUser.username);
-        sessionStorage.setItem("lastname", savedUser.lastname);
-
-        navigate("/reserva", {
-          state: { username: savedUser.username, lastname: savedUser.lastname, email: savedUser.email },
-        });
+        if (
+          savedUser.email === formData.email &&
+          savedUser.password === formData.password
+        ) {
+          sessionStorage.setItem("user", JSON.stringify(savedUser));
+          
+          navigate("/reserva", {
+            state: {
+              username: savedUser.username,
+              lastname: savedUser.lastname,
+              email: savedUser.email,
+            },
+            replace: true,
+          });
+          
+          window.dispatchEvent(new Event("storage"));
+        } else {
+          throw new Error("Credenciales incorrectas");
+        }
       } else {
-        setErrorMessage("Credenciales incorrectas.");
-      }
-    } else {
-      localStorage.setItem("user", JSON.stringify(formData));
-      sessionStorage.setItem("user", JSON.stringify(formData));
-      sessionStorage.setItem("username", formData.username);
-      sessionStorage.setItem("lastname", formData.lastname);
+        // Lógica de Registro
+        if (!formData.username || !formData.lastname) {
+          throw new Error("Nombre y apellidos son requeridos");
+        }
 
-      navigate("/", {
-        state: { username: formData.username, lastname: formData.lastname, email: formData.email },
-      });
+        const userData = {
+          username: formData.username.trim(),
+          lastname: formData.lastname.trim(),
+          email: formData.email.toLowerCase().trim(),
+          password: formData.password,
+        };
+
+        localStorage.setItem("user", JSON.stringify(userData));
+        sessionStorage.setItem("user", JSON.stringify(userData));
+        
+        navigate("/", {
+          state: userData,
+          replace: true,
+        });
+        
+        window.dispatchEvent(new Event("storage"));
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+      setTimeout(() => setErrorMessage(""), 5000);
     }
   };
 
-  return { isLogin, setIsLogin, formData, handleChange, handleSubmit, errorMessage };
+  return {
+    isLogin,
+    setIsLogin,
+    formData,
+    handleChange,
+    handleSubmit,
+    errorMessage,
+  };
 };
 
 export default useLoginForm;
