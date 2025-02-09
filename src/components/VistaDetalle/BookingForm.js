@@ -21,7 +21,7 @@ function BookingForm() {
       const sessionUser = sessionStorage.getItem("user");
 
       if (sessionUser) {
-        navigate("/", { state: { nombre: formData.nombre, email: formData.email } });
+        navigate("/reserva", { state: { nombre: formData.nombre, email: formData.email } });
       } else {
         navigate("/login", { state: { nombre: formData.nombre, email: formData.email } });
       }

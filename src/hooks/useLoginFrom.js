@@ -23,7 +23,7 @@ const useLoginForm = () => {
         JSON.parse(localStorage.getItem("user"));
         
       if (savedUser) {
-        navigate("/", { replace: true });
+        navigate("/login", { replace: true });
       }
     };
     

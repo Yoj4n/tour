@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/Navbar.css";
 import useNavbarState from "../hooks/useNavbarState";
 
@@ -8,6 +8,11 @@ function Navbar() {
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate("/login"); // Asegura que está llamando correctamente a la ruta
+  };
+
 
   useEffect(() => {
     const checkUser = () => {
@@ -60,9 +65,7 @@ function Navbar() {
                 </li>
               ) : (
                 <li>
-                  <Link to="/login">
-                    <button className="btn-book">Iniciar Sesión</button>
-                  </Link>
+                  <button className="btn-book" onClick={handleLoginClick}>Iniciar Sesión</button>
                 </li>
               )}
             </ul>
@@ -93,9 +96,9 @@ function Navbar() {
                 )}
               </div>
             ) : (
-              <Link to="/login">
-                <button className="btn-book">Iniciar Sesión</button>
-              </Link>
+              
+                <button className="btn-book" onClick={handleLoginClick}>Iniciar Sesión</button>
+              
             )}
           </div>
         )}
