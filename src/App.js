@@ -13,6 +13,7 @@ import VistaDetalle from './views/VistaDetalle.js';
 import Cart from './views/Cart.js';
 // import ContactForm from './components/Contact/ContactoFrom.js';
 import Reserva from './views/Reserva.js';
+import Perfil from './views/Perfil.js';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path='/contact'element={<Contact/>}/>
           <Route path='/reserva'element={<Reserva/>}/>
           <Route path='/infoTuristica' element={<InfoTuristica/>}/> 
+          <Route path='/perfil' element={<Perfil/>}/> 
         </Routes>
       </main>
       <Footer />

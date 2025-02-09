@@ -1,0 +1,96 @@
+.perfil-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .perfil-imagen {
+    text-align: center;
+  }
+  
+  .imagen-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid #ccc;
+  }
+  
+  .perfil-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  h2 {
+    color: #0056b3;
+    text-align: center;
+  }
+  
+  /* Diseño en dos columnas */
+  .form-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 48%;
+  }
+  
+  .input-group-perfil {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group-perfil label {
+    font-weight: bold;
+    color: #0056b3;
+    text-align: left;
+  }
+  
+  .input-group-perfil input {
+    padding: 8px;
+    border: 1px solid #0056b3;
+    border-radius: 20px;
+    width: 100%;
+  }
+  
+  .guardar-btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .guardar-btn:hover {
+    background-color: #003d82;
+  }
+  
+  /* Hacerlo responsive */
+  @media (max-width: 768px) {
+    .perfil-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-grid {
+      flex-direction: column;
+    }
+  
+    .columna {
+      width: 100%;
+    }
+  }
+  
