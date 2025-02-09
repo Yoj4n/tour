@@ -21,9 +21,9 @@ function Navbar() {
   }, [location]); 
 
   const handleLogout = () => {
-    sessionStorage.removeItem("user"); // Eliminar usuario de sessionStorage
+    sessionStorage.removeItem("user");
     setUser(null);
-    window.location.reload(); // Recargar la página para aplicar cambios
+    window.dispatchEvent(new Event('storage')); 
   };
 
   return (
