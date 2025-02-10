@@ -1,0 +1,65 @@
+.notfound-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1e3a56;
+    text-align: center;
+  }
+  
+  .notfound-title {
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;
+    animation: bounce 1s infinite alternate;
+  }
+  
+  .notfound-subtitle {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .notfound-text {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .notfound-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    background-color: #007bff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .notfound-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Animación del título */
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Animación de fondo */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

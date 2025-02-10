@@ -10,6 +10,7 @@ function Navbar() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const handleLoginClick = () => {
+    sessionStorage.setItem("sessionActive", "true");
     navigate("/login"); 
   };
   
@@ -28,6 +29,7 @@ function Navbar() {
   }, [location]); 
 
   const handleLogout = () => {
+    sessionStorage.removeItem("sessionActive");
     sessionStorage.removeItem("user");
     setUser(null);
     window.dispatchEvent(new Event('storage')); 
