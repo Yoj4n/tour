@@ -1,12 +1,10 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute = () => {
-  // Verificar si hay una sesión activa en sessionStorage
-  const isAuthenticated = sessionStorage.getItem("userSession");
+const ProtectedRoute = () => {
+  const isAuthenticated = sessionStorage.getItem("sessionActive"); // Verifica sesión activa
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/404" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/404" replace />;
 };
 
-export default PrivateRoute;
-
+export default ProtectedRoute;
