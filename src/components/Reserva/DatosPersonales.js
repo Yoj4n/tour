@@ -9,14 +9,24 @@ const DatosPersonales = ({ avanzar, actualizarDatos }) => {
   const navigate = useNavigate();
   
 
-  const { username, lastname, email } = location.state || {};
+  // const { username, lastname, email } = location.state || {};
 
-  const [formData, setFormData] = useState({
-    nombres: username || "",
-    apellidos: lastname || "",
-    correo: email || "",
-    celular: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   nombres: username || "",
+  //   apellidos: lastname || "",
+  //   correo: email || "",
+  //   celular: "",
+  // });
+
+  const storedUser = JSON.parse(localStorage.getItem("user")) || {};
+
+const [formData, setFormData] = useState({
+  nombres: storedUser.username || "",
+  apellidos: storedUser.lastname || "",
+  correo: storedUser.email || "",
+  celular: "",
+});
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

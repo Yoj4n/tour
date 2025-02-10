@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../../styles/Reserva/Confirmacion.css";
 
-const Confirmacion = ({ avanzar, regresar, datos }) => {
-  const precioPaquete = datos.precioPaquete ? Number(datos.precioPaquete):0;
+const Confirmacion = ({ avanzar, regresar }) => {
+  const location = useLocation();
+  const datos = location.state || {};  // Obtiene los datos de `location.state`
+  const precioPaquete = datos.precioPaquete ? Number(datos.precioPaquete) : 0;
+
   const [reserva, setReserva] = useState({
     fechaReserva: datos.fechaReserva || "",
     adultos: datos.adultos || 1,
     niños: datos.niños || 0,
   });
-
-  
 
   const tarifaGuia = 150000;
   const seguro = 60000;
@@ -17,10 +19,9 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
   const impuestoParques = 50000;
   const impuestoCoormacarena = 27500;
 
-  // Calcular el costo total dinámicamente
   const costoTotal = 
-    precioPaquete * reserva.adultos + // Precio del paquete por adulto
-    (precioPaquete * 0.5 * reserva.niños) + // Niños pagan el 50%
+    precioPaquete * reserva.adultos +
+    (precioPaquete * 0.5 * reserva.niños) +
     tarifaGuia +
     seguro +
     impuestoAlcaldia +
@@ -49,7 +50,7 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
           <input
             type="date"
             name="fechaReserva"
-            value={reserva.fechaReserva}
+            defaultValue={reserva.fechaReserva}
             onChange={manejarCambio}
             className="input-reservaDate"
           />
@@ -72,7 +73,7 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
         <div className="resumen-container">
           <h3>Resumen</h3>
           <div className="resumen">
-            <p>Valor neto del servicio <span>${precioPaquete.toLocaleString('es-CO')}</span></p>
+            <p>Valor neto del servicio <span>${((precioPaquete*reserva.adultos)+(precioPaquete * 0.5 * reserva.niños)).toLocaleString('es-CO')}</span></p>
             <p>Guía turístico <span>${tarifaGuia.toLocaleString('es-CO')}</span></p>
             <p>Seguro obligatorio <span>${seguro.toLocaleString('es-CO')}</span></p>
             <p>Impuesto Alcaldía <span>${impuestoAlcaldia.toLocaleString('es-CO')}</span></p>

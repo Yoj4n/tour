@@ -5,6 +5,7 @@ import "../../styles/VistaDetalle/BookingForm.css";
 function BookingForm({ precioPaquete }) {
   const [formData, setFormData] = useState({
     username: "",
+    lastname: "",
     email: "",
     checkIn: "",
   });
@@ -21,14 +22,15 @@ function BookingForm({ precioPaquete }) {
       const sessionUser = sessionStorage.getItem("user");
 
       if (sessionUser) {
-        navigate("/reserva", { state: { username: formData.username, email: formData.email, precioPaquete } });
+        navigate("/reserva", { state: { username: formData.username, lastname: formData.lastname, email: formData.email, precioPaquete, } });
       } else {
         navigate("/login", { 
           state: { 
             username: formData.username, 
+            lastname: formData.lastname,
             email: formData.email, 
             fromBooking: true, 
-            precioPaquete
+            precioPaquete,
           } 
         });
       }
