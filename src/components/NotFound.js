@@ -7,9 +7,9 @@ const NotFound = () => {
     <div className="notfound-container">
       {/* Fondo animado */}
       <div className="animation-bg">
-        <div className="circle circle-1"></div>
-        <div className="circle circle-2"></div>
-        <div className="circle circle-3"></div>
+        <div className="circle-404 circle-1"></div>
+        <div className="circle-404 circle-2"></div>
+        <div className="circle-404 circle-3"></div>
       </div>
       
       {/* Contenido principal */}

@@ -39,7 +39,7 @@ function App() {
             <Route path="/perfil" element={<Perfil />} />
           </Route>
 
-          {/* Ruta 404 */}
+          
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
