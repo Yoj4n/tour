@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import RelatedImages from "../components/VistaDetalle/RelatedImages";
 import PackageMap from "../components/VistaDetalle/PackageMap";
 import MorePackages from "../components/VistaDetalle/MorePackages";
@@ -9,10 +9,10 @@ import "../../src/styles/VistaDetalle/VistaDetalle.css";
 import PackageDetail from "../components/VistaDetalle/PackageDetail";
 
 const VistaDetalle = () => {
-  const { id } = useParams(); 
-  const destination = destinations[id]; 
+  const { id } = useParams();
+  const destination = destinations[id];
   if (!destination) {
-    return <h2>Destino no encontrado</h2>; 
+    return <h2>Destino no encontrado</h2>;
   }
   return (
     <div className="vista-detalle">
@@ -21,9 +21,9 @@ const VistaDetalle = () => {
       </header>
       <div className="container">
         <div className="vista-detalle-container">
-          <PackageDetail destination={destination}/>
+          <PackageDetail destination={destination} />
           <div className="vista-detalle-sidebar">
-            <BookingForm />
+            <BookingForm precioPaquete={destination.price} />
             <RelatedImages />
             <PackageMap destination={destination} />
             <MorePackages />

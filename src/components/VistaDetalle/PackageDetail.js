@@ -10,7 +10,7 @@ function PackageDetail({destination}) {
   return (
     <div className="single-packge-wrap">
       <div className="single-package-head d-flex align-items-center">
-      <PackageHeader title={destination.title} rating={destination.rating} />
+      <PackageHeader title={destination.title} rating={destination.rating} price={destination.price} />
       </div>
       <PackageMeta location={destination.location}/>
       <div className="vista-detalle-image-placeholder">

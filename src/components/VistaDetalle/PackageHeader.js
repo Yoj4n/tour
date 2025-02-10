@@ -2,7 +2,7 @@ import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import "../../styles/VistaDetalle/PackageHeader.css";
 
-const PackageHeader = ({title, rating}) => {
+const PackageHeader = ({title, rating, price}) => {
   return (
     <div className="package-header">
       <div className="package-title">
@@ -15,8 +15,8 @@ const PackageHeader = ({title, rating}) => {
       </div>
       
       <div className="package-price-header">
-        <span className="price">$750</span>
-        <span className="per-person">/ per person</span>
+        <span className="price">${price.toLocaleString('es-CO')}</span>
+        <span className="per-person">/ por persona</span>
       </div>
     </div>
   );

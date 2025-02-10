@@ -2,14 +2,33 @@ import React, { useState } from "react";
 import "../../styles/Reserva/Confirmacion.css";
 
 const Confirmacion = ({ avanzar, regresar, datos }) => {
+  const precioPaquete = datos.precioPaquete ? Number(datos.precioPaquete):0;
   const [reserva, setReserva] = useState({
     fechaReserva: datos.fechaReserva || "",
     adultos: datos.adultos || 1,
     niños: datos.niños || 0,
   });
 
+  
+
+  const tarifaGuia = 150000;
+  const seguro = 60000;
+  const impuestoAlcaldia = 37500;
+  const impuestoParques = 50000;
+  const impuestoCoormacarena = 27500;
+
+  // Calcular el costo total dinámicamente
+  const costoTotal = 
+    precioPaquete * reserva.adultos + // Precio del paquete por adulto
+    (precioPaquete * 0.5 * reserva.niños) + // Niños pagan el 50%
+    tarifaGuia +
+    seguro +
+    impuestoAlcaldia +
+    impuestoParques +
+    impuestoCoormacarena;
+
   const manejarCambio = (e) => {
-    setReserva({ ...reserva, [e.target.name]: e.target.value });
+    setReserva({ ...reserva, [e.target.name]: Number(e.target.value) });
   };
 
   const confirmarDatos = () => {
@@ -38,18 +57,14 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
           <label>Adultos</label>
           <select name="adultos" value={reserva.adultos} onChange={manejarCambio}>
             {[1, 2, 3, 4, 5].map((num) => (
-              <option key={num} value={num}>
-                {num}
-              </option>
+              <option key={num} value={num}>{num}</option>
             ))}
           </select>
 
           <label>Niños</label>
           <select name="niños" value={reserva.niños} onChange={manejarCambio}>
             {[0, 1, 2, 3, 4, 5].map((num) => (
-              <option key={num} value={num}>
-                {num}
-              </option>
+              <option key={num} value={num}>{num}</option>
             ))}
           </select>
         </div>
@@ -57,13 +72,13 @@ const Confirmacion = ({ avanzar, regresar, datos }) => {
         <div className="resumen-container">
           <h3>Resumen</h3>
           <div className="resumen">
-            <p>Valor neto del servicio <span>$1.350.000</span></p>
-            <p>Guía turístico <span>$150.000</span></p>
-            <p>Seguro obligatorio <span>$60.000</span></p>
-            <p>Impuesto Alcaldía <span>$37.500</span></p>
-            <p>Impuesto Parques Nacionales de Colombia <span>$50.000</span></p>
-            <p>Impuesto Coormacarena <span>$27.500</span></p>
-            <p className="total">Costo total <span><strong>$1.675.000</strong></span></p>
+            <p>Valor neto del servicio <span>${precioPaquete.toLocaleString('es-CO')}</span></p>
+            <p>Guía turístico <span>${tarifaGuia.toLocaleString('es-CO')}</span></p>
+            <p>Seguro obligatorio <span>${seguro.toLocaleString('es-CO')}</span></p>
+            <p>Impuesto Alcaldía <span>${impuestoAlcaldia.toLocaleString('es-CO')}</span></p>
+            <p>Impuesto Parques Nacionales de Colombia <span>${impuestoParques.toLocaleString('es-CO')}</span></p>
+            <p>Impuesto Coormacarena <span>${impuestoCoormacarena.toLocaleString('es-CO')}</span></p>
+            <p className="total">Costo total <span><strong>${costoTotal.toLocaleString('es-CO')}</strong></span></p>
           </div>
         </div>
       </div>
