@@ -33,13 +33,22 @@ const Confirmacion = ({ avanzar, regresar }) => {
   };
 
   const confirmarDatos = () => {
-    if (reserva.fechaReserva && reserva.adultos > 0 && reserva.niños >= 0) {
+    if ( reserva.adultos > 0 && reserva.niños >= 0) {
+      // Guardar datos en sessionStorage
+      sessionStorage.setItem("datosReserva", JSON.stringify({
+        valorNeto: (precioPaquete * reserva.adultos) + (precioPaquete * 0.5 * reserva.niños),
+        tarifaGuia,
+        seguro,
+        impuestoAlcaldia,
+        impuestoParques,
+        impuestoCoormacarena,
+        costoTotal
+      }));
       avanzar();
     } else {
       alert("Por favor, complete todos los campos antes de continuar.");
     }
   };
-
   return (
     <div className="confirmacion-container">
       <h2 className="h2-confirmacion">Confirmación de Reserva</h2>
