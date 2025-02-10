@@ -33,7 +33,7 @@ const Confirmacion = ({ avanzar, regresar }) => {
   };
 
   const confirmarDatos = () => {
-    if ( reserva.adultos > 0 && reserva.niños >= 0) {
+    if (reserva.fechaReserva && reserva.adultos > 0 && reserva.niños >= 0) {
       // Guardar datos en sessionStorage
       sessionStorage.setItem("datosReserva", JSON.stringify({
         valorNeto: (precioPaquete * reserva.adultos) + (precioPaquete * 0.5 * reserva.niños),
