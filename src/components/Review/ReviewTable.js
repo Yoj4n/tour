@@ -21,26 +21,14 @@ const ReviewTable = () => {
       let reservasGuardadas = JSON.parse(localStorage.getItem("reservas")) || {};
       let reservasUsuario = reservasGuardadas[userEmail] || [];
 
-<<<<<<< HEAD
       reservasUsuario.splice(index, 1);
       reservasGuardadas[userEmail] = reservasUsuario;
       localStorage.setItem("reservas", JSON.stringify(reservasGuardadas));
 
-=======
-      // Eliminar la reserva seleccionada
-      reservasUsuario.splice(index, 1);
-      reservasGuardadas[userEmail] = reservasUsuario;
-
-      // Actualizar localStorage
-      localStorage.setItem("reservas", JSON.stringify(reservasGuardadas));
-
-      // Actualizar estado
->>>>>>> origin/main
       setReservas(reservasUsuario);
     }
   };
 
-<<<<<<< HEAD
   const abrirModalCalificar = (index) => {
     setReservaSeleccionada(index);
     setModalOpen(true);
@@ -53,6 +41,8 @@ const ReviewTable = () => {
       let reservasUsuario = reservasGuardadas[userEmail] || [];
 
       const reserva = reservasUsuario[reservaSeleccionada];
+
+      // Marcar la reserva como calificada
       reservasUsuario[reservaSeleccionada] = {
         ...reserva,
         calificado: true,
@@ -62,6 +52,8 @@ const ReviewTable = () => {
 
       reservasGuardadas[userEmail] = reservasUsuario;
       localStorage.setItem("reservas", JSON.stringify(reservasGuardadas));
+
+      // Guardar la reseña en localStorage
       let reseñasGuardadas = JSON.parse(localStorage.getItem("reseñas")) || {};
       
       if (!reseñasGuardadas[reserva.nombreDestino]) {
@@ -81,8 +73,6 @@ const ReviewTable = () => {
     }
   };
 
-=======
->>>>>>> origin/main
   return (
     <div className="review-container">
       <h2>Mis Reservas</h2>
@@ -102,37 +92,22 @@ const ReviewTable = () => {
             reservas.map((reserva, index) => {
               const fechaReserva = new Date(reserva.fechaReserva);
               const fechaActual = new Date();
-<<<<<<< HEAD
               fechaReserva.setHours(0, 0, 0, 0);
               fechaActual.setHours(0, 0, 0, 0);
 
-=======
-
-              // Normalizar la hora para comparar solo día, mes y año
-              fechaReserva.setHours(0, 0, 0, 0);
-              fechaActual.setHours(0, 0, 0, 0);
-
-              // Comparación correcta de fechas
->>>>>>> origin/main
-              const estado = fechaReserva < fechaActual ? "FINALIZADO" : "PENDIENTE";
+              const estado = fechaReserva < fechaActual ? "FINALIZADO" : "PEDIDA";
 
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{reserva.nombreDestino}</td>
                   <td>{reserva.adultos}</td>
-<<<<<<< HEAD
                   <td>{reserva.niños}</td>
-                  <td className={estado === "FINALIZADO" ? "estado-finalizado" : "estado-pendiente"}>
-=======
-                  <td>{reserva.ninos}</td>
                   <td className={estado === "FINALIZADO" ? "estado-finalizado" : "estado-pedida"}>
->>>>>>> origin/main
                     {estado}
                   </td>
                   <td>
                     {estado === "FINALIZADO" ? (
-<<<<<<< HEAD
                       <button 
                         className={`btn-calificar ${reserva.calificado ? "disabled" : ""}`} 
                         onClick={() => abrirModalCalificar(index)}
@@ -144,11 +119,6 @@ const ReviewTable = () => {
                       <button className="btn-cancelar" onClick={() => cancelarReserva(index)}>
                         Cancelar
                       </button>
-=======
-                      <button className="btn-calificar">Calificar</button>
-                    ) : (
-                      <button className="btn-cancelar" onClick={() => cancelarReserva(index)}>Cancelar</button>
->>>>>>> origin/main
                     )}
                   </td>
                 </tr>
