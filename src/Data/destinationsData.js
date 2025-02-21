@@ -1,4 +1,4 @@
-// src/data/destinationsData.js
+
 const destinations = [
     {
       imgSrc: "https://cdn.colombia.com/sdi/2019/10/10/san-jose-del-guaviare-puerta-de-orion-de-la-selva-a-la-constelacion-776681.jpg",

@@ -7,6 +7,7 @@ import BookingForm from "../components/VistaDetalle/BookingForm";
 import destinations from "../Data/destinationsData";
 import "../../src/styles/VistaDetalle/VistaDetalle.css";
 import PackageDetail from "../components/VistaDetalle/PackageDetail";
+import ReseñasDestino from "../components/VistaDetalle/ReseñasDestino";
 
 const VistaDetalle = () => {
   const { id } = useParams();
@@ -22,14 +23,18 @@ const VistaDetalle = () => {
       <div className="container">
         <div className="vista-detalle-container">
           <PackageDetail destination={destination} />
+          
           <div className="vista-detalle-sidebar">
             <BookingForm precioPaquete={destination.price} nombreDestino={destination.title} />
             <RelatedImages />
             <PackageMap destination={destination} />
             <MorePackages />
           </div>
+          
         </div>
       </div>
+      <ReseñasDestino nombreDestino={destination.title} />
+
     </div>
   );
 };
