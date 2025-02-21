@@ -23,6 +23,7 @@
 
   
   .review-table tr:nth-child(even) {
+<<<<<<< HEAD
     background-color: #d9e4ff;
   }
   
@@ -33,6 +34,18 @@
 
   .btn-calificar {
     background-color: #4870f4;
+=======
+    background-color: #f2f2f2;
+  }
+  
+  .review-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* 🔵 Estilos para el botón "Calificar" */
+  .btn-calificar {
+    background-color: #2759ff;
+>>>>>>> origin/main
     color: white;
     border: none;
     padding: 8px 12px;
@@ -41,6 +54,7 @@
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
+<<<<<<< HEAD
   .btn-calificar.disabled, .btn-calificar.disabled:hover {
     background: gray;
     cursor: not-allowed;
@@ -61,6 +75,8 @@
    .btn-cancelar:hover {
     background-color: #6b0000;
   }
+=======
+>>>>>>> origin/main
   
   .btn-calificar:hover {
     background-color: #07006b;
