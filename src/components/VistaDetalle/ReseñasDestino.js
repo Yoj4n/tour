@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/VistaDetalle/reseñasDestino.css";
+import reseñasData from "../../Data/reseñasData";
 
 const ReseñasDestino = ({ nombreDestino }) => {
   const [reseñas, setReseñas] = useState([]);
@@ -15,8 +16,14 @@ const ReseñasDestino = ({ nombreDestino }) => {
     }
 
     // Obtener las reseñas asociadas al nombre del destino
-    const reseñasDestino = reseñasGuardadas[nombreDestino] || [];
-    setReseñas(reseñasDestino);
+    //     const reseñasDestino = reseñasGuardadas[nombreDestino] || [];
+    //     setReseñas(reseñasDestino);
+    //   }, [nombreDestino]);
+    let reseñasDestino =
+      reseñasGuardadas[nombreDestino] || reseñasData[nombreDestino] || [];
+
+    // Solo mostrar las últimas 4 reseñas
+    setReseñas(reseñasDestino.slice(-4));
   }, [nombreDestino]);
 
   return (
@@ -32,7 +39,7 @@ const ReseñasDestino = ({ nombreDestino }) => {
             let usuarioObj = {};
 
             try {
-              usuarioObj = JSON.parse(reseña.usuario); // Convertir el string JSON en un objeto
+              usuarioObj = JSON.parse(reseña.usuario);
             } catch (error) {
               console.error("Error al parsear usuario:", error);
             }

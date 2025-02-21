@@ -14,7 +14,7 @@
   font-weight: bold;
 }
 
-/* Contenedor principal */
+
 .vista-detalle-container {
   display: flex;
   /* flex-wrap: wrap; */
@@ -32,8 +32,8 @@
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
 }
 
-/* Sidebar */
 .vista-detalle-sidebar {
+  align-items: center;
   flex: 1;
   display: flex;
   flex-direction: column;
