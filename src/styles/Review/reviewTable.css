@@ -20,6 +20,7 @@
   .review-table th {
     background-color: #f4f4f4;
   }
+<<<<<<< HEAD
 
   
   .review-table tr:nth-child(even) {
@@ -83,3 +84,6 @@
   .btn-calificar:active {
     transform: scale(0.95);
   }
+=======
+  
+>>>>>>> parent of 1536a3c (Correccion estilos reserva)
