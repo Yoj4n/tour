@@ -4,6 +4,7 @@ import "../../styles/Review/ratingModal.css";
 const RatingModal = ({ isOpen, onClose, onSubmit }) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [hoverRating, setHoverRating] = useState(0);
 
   if (!isOpen) return null;
 
@@ -17,8 +18,10 @@ const RatingModal = ({ isOpen, onClose, onSubmit }) => {
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
-              className={star <= rating ? "star filled" : "star"}
+              className={`star ${star <= (hoverRating || rating) ? "filled" : ""}`}
               onClick={() => setRating(star)}
+              onMouseEnter={() => setHoverRating(star)}
+              onMouseLeave={() => setHoverRating(0)}
             >
               ★
             </span>

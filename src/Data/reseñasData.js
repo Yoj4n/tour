@@ -200,6 +200,28 @@ const reseñasData = {
         "Un lugar hermoso para visitar en familia. El agua es refrescante y la caminata hasta la cascada vale totalmente la pena.",
       rating: 5,
       usuario: JSON.stringify({
+        username: "Jimena",
+        lastname: "Rodríguez",
+        email: "laura@example.com",
+        password: "uvwx",
+      }),
+    },
+    {
+      comentario:
+        "El efecto del arcoíris sobre la cascada es simplemente mágico. Un destino imperdible para quienes buscan paisajes de ensueño.",
+      rating: 5,
+      usuario: JSON.stringify({
+        username: "Juan",
+        lastname: "García",
+        email: "pedro@example.com",
+        password: "qrst",
+      }),
+    },
+    {
+      comentario:
+        "Un lugar hermoso para visitar en familia. El agua es refrescante y la caminata hasta la cascada vale totalmente la pena.",
+      rating: 5,
+      usuario: JSON.stringify({
         username: "laura555",
         lastname: "Rodríguez",
         email: "laura@example.com",

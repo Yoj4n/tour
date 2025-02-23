@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import "../../styles/Reserva/Confirmacion.css";
 
 const Confirmacion = ({ avanzar, regresar }) => {
-  const location = useLocation();
+  // const location = useLocation();
   // const datos = location.state || {};
 
   const bookingData = JSON.parse(sessionStorage.getItem("bookingData")) || {};

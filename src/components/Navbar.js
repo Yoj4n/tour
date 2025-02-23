@@ -17,20 +17,28 @@ function Navbar() {
 
   useEffect(() => {
     const checkUser = () => {
-      const storedUser = sessionStorage.getItem("user");
+      // const storedUser = sessionStorage.getItem("user");
+      const storedUser = localStorage.getItem("user");
       setUser(storedUser ? JSON.parse(storedUser) : null);
       setDropdownOpen(false);
     };
     
     checkUser();
-    
-    window.addEventListener('storage', checkUser);
-    return () => window.removeEventListener('storage', checkUser);
-  }, [location]); 
+    const handleStorageChange = (event) => {
+      if (event.key === "user") {
+        checkUser();
+      }
+    };
+  
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, [location]);
 
   const handleLogout = () => {
     sessionStorage.removeItem("sessionActive");
-    sessionStorage.removeItem("user");
+    
+    // sessionStorage.removeItem("user");
+    localStorage.removeItem("user");
     setUser(null);
     window.dispatchEvent(new Event('storage')); 
     navigate("/");

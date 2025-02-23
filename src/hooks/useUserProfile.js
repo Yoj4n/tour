@@ -10,13 +10,13 @@ const useUserProfile = () => {
     imagen: "",
   });
 
-  // Cargar datos desde localStorage al montar el hook
+
   useEffect(() => {
     const datosGuardados = JSON.parse(localStorage.getItem("user")) || {};
     setUser(datosGuardados);
   }, []);
 
-  // Manejar cambios en los inputs
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({

@@ -38,8 +38,10 @@ const useLoginForm = () => {
         }
 
         if (savedUser.password === formData.password) {
-          sessionStorage.setItem("user", JSON.stringify(savedUser));
+          localStorage.setItem("user", JSON.stringify(savedUser));
 
+          sessionStorage.setItem("user", JSON.stringify(savedUser));
+          
           const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
 
           navigate(redirectPath, {

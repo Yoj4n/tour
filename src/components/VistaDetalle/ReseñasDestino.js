@@ -14,10 +14,25 @@ const ReseñasDestino = ({ nombreDestino }) => {
     } catch (error) {
       console.error("Error al leer reseñas del localStorage:", error);
     }
-    let reseñasDestino =
-      reseñasGuardadas[nombreDestino] || reseñasData[nombreDestino] || [];
+    //   let reseñasDestino =
+    //     reseñasGuardadas[nombreDestino] || reseñasData[nombreDestino] || [];
 
-    setReseñas(reseñasDestino.slice(-4));
+    //   setReseñas(reseñasDestino.slice(-4));
+    // }, [nombreDestino]);
+    const reseñasUsuario = reseñasGuardadas[nombreDestino] || [];
+    const reseñasBase = reseñasData[nombreDestino] || [];
+
+    // Obtener máximo 3 reseñas base y las más recientes del usuario
+    const cantidadReseñasUsuario = Math.min(reseñasUsuario.length, 4); // Máximo 2 del usuario
+    const cantidadReseñasBase = 4 - cantidadReseñasUsuario; // Se ajusta para mantener 4 reseñas
+
+    const ultimasReseñasUsuario = reseñasUsuario.slice(-cantidadReseñasUsuario);
+    const reseñasFinales = [
+      ...reseñasBase.slice(0, cantidadReseñasBase),
+      ...ultimasReseñasUsuario,
+    ];
+
+    setReseñas(reseñasFinales);
   }, [nombreDestino]);
 
   return (
