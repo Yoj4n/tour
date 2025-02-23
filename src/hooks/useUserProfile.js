@@ -10,13 +10,11 @@ const useUserProfile = () => {
     imagen: "",
   });
 
-
   useEffect(() => {
     const datosGuardados = JSON.parse(localStorage.getItem("user")) || {};
     setUser(datosGuardados);
   }, []);
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({
@@ -27,10 +25,24 @@ const useUserProfile = () => {
 
   // Guardar cambios en localStorage
   const handleSave = () => {
-    localStorage.setItem("user", JSON.stringify(user));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const sessionUser = JSON.parse(sessionStorage.getItem("user"));
+  
+    if (!sessionUser) {
+      alert("Error: No hay un usuario en sesión.");
+      return;
+    }
+  
+    const updatedUsers = users.map(user => 
+      user.email === sessionUser.email ? { ...user, ...user } : user
+    );
+  
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    sessionStorage.setItem("user", JSON.stringify(user)); // Actualizar sesión activa
+    
+    window.dispatchEvent(new Event("storage")); // Notificar cambio al Navbar
     alert("Perfil actualizado correctamente.");
   };
-
   // Manejar subida de imagen
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -40,6 +52,7 @@ const useUserProfile = () => {
         setUser((prevUser) => {
           const updatedUser = { ...prevUser, imagen: reader.result };
           localStorage.setItem("user", JSON.stringify(updatedUser));
+          window.dispatchEvent(new Event("storage"));
           return updatedUser;
         });
       };
