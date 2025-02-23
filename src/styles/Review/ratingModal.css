@@ -19,7 +19,7 @@
     position: relative;
   }
   
-  .rating-stars {
+  .rating-stars-review {
     display: flex;
     justify-content: center;
     gap: 5px;

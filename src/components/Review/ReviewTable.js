@@ -15,7 +15,6 @@ const ReviewTable = () => {
     }
   }, []);
 
-<<<<<<< HEAD
   const cancelarReserva = (index) => {
     const userEmail = sessionStorage.getItem("user");
     if (userEmail) {
@@ -74,8 +73,6 @@ const ReviewTable = () => {
     }
   };
 
-=======
->>>>>>> parent of 1536a3c (Correccion estilos reserva)
   return (
     <div className="review-container">
       <h2>Mis Reservas</h2>
@@ -86,11 +83,12 @@ const ReviewTable = () => {
             <th>SERVICIO</th>
             <th>ADULTOS</th>
             <th>NIÑOS</th>
+            <th>ESTADO</th>
+            <th>ACCIONES</th>
           </tr>
         </thead>
         <tbody>
           {reservas.length > 0 ? (
-<<<<<<< HEAD
             reservas.map((reserva, index) => {
               const fechaReserva = new Date(reserva.fechaReserva);
               const fechaActual = new Date();
@@ -126,16 +124,6 @@ const ReviewTable = () => {
                 </tr>
               );
             })
-=======
-            reservas.map((reserva, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{reserva.nombreDestino}</td>
-                <td>{reserva.adultos}</td>
-                <td>{reserva.ninos}</td>
-              </tr>
-            ))
->>>>>>> parent of 1536a3c (Correccion estilos reserva)
           ) : (
             <tr>
               <td colSpan="4">No tienes reservas registradas.</td>

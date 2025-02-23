@@ -13,12 +13,13 @@
 .package-title {
   flex: 1;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 5px;
 }
 
 .package-title h2 {
-  font-size: clamp(20px, 5vw, 32px); 
+  font-size: clamp(20px, 1.6vw, 24px); 
   font-weight: bold;
   color: #1a1a1a;
   text-align: left;

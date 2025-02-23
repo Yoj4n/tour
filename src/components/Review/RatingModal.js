@@ -13,7 +13,7 @@ const RatingModal = ({ isOpen, onClose, onSubmit }) => {
         <h2>¡Tu opinión nos ayuda!</h2>
         <p>¿Cómo calificas tu experiencia?</p>
 
-        <div className="rating-stars">
+        <div className="rating-stars-review">
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}

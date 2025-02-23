@@ -14,15 +14,9 @@ const ReseñasDestino = ({ nombreDestino }) => {
     } catch (error) {
       console.error("Error al leer reseñas del localStorage:", error);
     }
-
-    // Obtener las reseñas asociadas al nombre del destino
-    //     const reseñasDestino = reseñasGuardadas[nombreDestino] || [];
-    //     setReseñas(reseñasDestino);
-    //   }, [nombreDestino]);
     let reseñasDestino =
       reseñasGuardadas[nombreDestino] || reseñasData[nombreDestino] || [];
 
-    // Solo mostrar las últimas 4 reseñas
     setReseñas(reseñasDestino.slice(-4));
   }, [nombreDestino]);
 
@@ -47,7 +41,7 @@ const ReseñasDestino = ({ nombreDestino }) => {
             return (
               <div key={index} className="reseña-card">
                 <div className="avatar"></div>
-                <h3>
+                <h3 className="h3-review">
                   {usuarioObj.username} {usuarioObj.lastname}
                 </h3>
                 <div className="estrellas">
