@@ -21,10 +21,12 @@ function PopularDestinations({ searchQuery }) {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  // Filtrar destinos según la búsqueda
   const filteredDestinations = destinations.filter((destination) =>
     destination.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    destination.location.toLowerCase().includes(searchQuery.toLowerCase())
+    destination.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    destination.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    destination.price.toString().includes(searchQuery)
+
   );
 
   const featuredDestinations = filteredDestinations.slice(0, 3);

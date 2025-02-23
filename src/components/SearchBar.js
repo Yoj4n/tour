@@ -16,7 +16,7 @@ function SearchBar({ onSearch }) {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Buscar Destino..."
+          placeholder="Buscar Destino por nombre, precio, o alguna descripcion..."
           className="search-input"
           value={query}
           onChange={handleChange}
