@@ -40,11 +40,11 @@ const Confirmacion = ({ avanzar, regresar }) => {
       [name]: value,
     }));
   };
-
+  
   const confirmarDatos = () => {
     const userEmail = sessionStorage.getItem("user");
     if (!userEmail) {
-      alert("No hay usuario activo. Inicie sesión para continuar.");
+      alert("No existe usuario activo. Inicie sesión para continuar.");
       return;
     }
     if (reserva.fechaReserva && reserva.adultos > 0 && reserva.ninos >= 0) {
