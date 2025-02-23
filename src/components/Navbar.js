@@ -35,13 +35,14 @@ function Navbar() {
   }, [location]);
 
   const handleLogout = () => {
-    sessionStorage.removeItem("sessionActive");
+    // sessionStorage.removeItem("sessionActive");
     
     // sessionStorage.removeItem("user");
     localStorage.removeItem("user");
     setUser(null);
+    setDropdownOpen(false);
     window.dispatchEvent(new Event('storage')); 
-    navigate("/");
+    navigate("/", { replace: true });
   };
 
   return (

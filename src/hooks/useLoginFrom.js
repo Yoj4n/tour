@@ -30,7 +30,6 @@ const useLoginForm = () => {
       let users = JSON.parse(localStorage.getItem("users")) || [];
 
       if (isLogin) {
-        // Buscar usuario en la lista de usuarios
         const savedUser = users.find(user => user.email === formData.email);
 
         if (!savedUser) {
@@ -41,7 +40,7 @@ const useLoginForm = () => {
           localStorage.setItem("user", JSON.stringify(savedUser));
 
           sessionStorage.setItem("user", JSON.stringify(savedUser));
-          
+          window.dispatchEvent(new Event("storage"));
           const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
 
           navigate(redirectPath, {
@@ -71,16 +70,17 @@ const useLoginForm = () => {
 
         users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("user", JSON.stringify(newUser));
         sessionStorage.setItem("user", JSON.stringify(newUser));
 
         const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
-
+        window.dispatchEvent(new Event("storage"));
         navigate(redirectPath, {
           state: newUser,
           replace: true,
         });
 
-        window.dispatchEvent(new Event("storage"));
+        
       }
     } catch (error) {
       setErrorMessage(error.message);
