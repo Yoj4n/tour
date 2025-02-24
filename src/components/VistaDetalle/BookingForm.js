@@ -22,9 +22,13 @@ function BookingForm({ precioPaquete, nombreDestino }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.username && formData.lastname && formData.email && formData.celular && formData.fechaReserva) {
-      const sessionUser = sessionStorage.getItem("user");
+      // const sessionUser = sessionStorage.getItem("user");
+      const sessionUser = localStorage.getItem("user");
+
       if (sessionUser) {
-        sessionStorage.setItem("bookingData", JSON.stringify({ ...formData, precioPaquete, nombreDestino }));
+        localStorage.setItem("bookingData", JSON.stringify({ ...formData, precioPaquete, nombreDestino }));
+
+        // sessionStorage.setItem("bookingData", JSON.stringify({ ...formData, precioPaquete, nombreDestino }));
         // navigate("/reserva", { state: { ...formData, precioPaquete, nombreDestino } });
         navigate("/reserva");
       } else {

@@ -7,6 +7,7 @@ const useUserProfile = () => {
     email: "",
     celular: "",
     password: "",
+    useUserProfile,
     imagen: "",
   });
 
@@ -23,27 +24,33 @@ const useUserProfile = () => {
     }));
   };
 
-  // Guardar cambios en localStorage
   const handleSave = () => {
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    // let users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = JSON.parse(sessionStorage.getItem("users")) || [];
     const sessionUser = JSON.parse(sessionStorage.getItem("user"));
-  
+
     if (!sessionUser) {
       alert("Error: No hay un usuario en sesión.");
       return;
     }
-  
-    const updatedUsers = users.map(user => 
-      user.email === sessionUser.email ? { ...user, ...user } : user
+    const updatedUser = { ...sessionUser, ...user };
+    // const updatedUsers = users.map(user =>
+    //   user.email === sessionUser.email ? { ...user, ...user } : user
+    // );
+    const updatedUsers = users.map((u) =>
+      u.email === sessionUser.email ? updatedUser : u
     );
-  
-    localStorage.setItem("users", JSON.stringify(updatedUsers));
-    sessionStorage.setItem("user", JSON.stringify(user)); // Actualizar sesión activa
-    
-    window.dispatchEvent(new Event("storage")); // Notificar cambio al Navbar
+
+    // localStorage.setItem("users", JSON.stringify(updatedUsers));
+    // localStorage.setItem("user", JSON.stringify(user));
+    // sessionStorage.setItem("user", JSON.stringify(user));
+    sessionStorage.setItem("users", JSON.stringify(updatedUsers));
+    sessionStorage.setItem("user", JSON.stringify(updatedUser));
+    setUser((prevUser) => ({ ...prevUser }));
+    window.dispatchEvent(new Event("storage"));
     alert("Perfil actualizado correctamente.");
   };
-  // Manejar subida de imagen
+
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {

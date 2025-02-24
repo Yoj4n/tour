@@ -17,19 +17,22 @@ function Navbar() {
 
   useEffect(() => {
     const checkUser = () => {
-      // const storedUser = sessionStorage.getItem("user");
-      const storedUser = localStorage.getItem("user");
+      const storedUser = sessionStorage.getItem("user");
+      //const storedUser = localStorage.getItem("user");
+      console.log("Usuario actualizado en Navbar:", storedUser);
       setUser(storedUser ? JSON.parse(storedUser) : null);
       setDropdownOpen(false);
     };
     
     checkUser();
-    const handleStorageChange = (event) => {
-      if (event.key === "user") {
-        checkUser();
-      }
+    // const handleStorageChange = (event) => {
+    //   if (event.key === "user") {
+    //     checkUser();
+    //   }
+    // };
+    const handleStorageChange = () => {
+      checkUser();
     };
-  
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
   }, [location]);
@@ -37,7 +40,7 @@ function Navbar() {
   const handleLogout = () => {
     // sessionStorage.removeItem("sessionActive");
     
-    // sessionStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     localStorage.removeItem("user");
     setUser(null);
     setDropdownOpen(false);
