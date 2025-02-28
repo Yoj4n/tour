@@ -1,0 +1,23 @@
+.review-container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .review-table th, .review-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .review-table th {
+    background-color: #f4f4f4;
+  }
+  

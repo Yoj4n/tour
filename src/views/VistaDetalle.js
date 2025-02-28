@@ -23,7 +23,7 @@ const VistaDetalle = () => {
         <div className="vista-detalle-container">
           <PackageDetail destination={destination} />
           <div className="vista-detalle-sidebar">
-            <BookingForm precioPaquete={destination.price} />
+            <BookingForm precioPaquete={destination.price} nombreDestino={destination.title} />
             <RelatedImages />
             <PackageMap destination={destination} />
             <MorePackages />

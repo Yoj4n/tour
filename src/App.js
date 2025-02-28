@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Footer from "../src/components/Footer";
 import Home from "../src/views/Home";
@@ -16,8 +16,10 @@ import Cart from "./views/Cart.js";
 // import ContactForm from './components/Contact/ContactoFrom.js';
 import Reserva from "./views/Reserva.js";
 import Perfil from "./views/Perfil.js";
+import Review from "./views/Review.js";
 
 function App() {
+  const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
   return (
     <div>
       <Navbar />
@@ -38,8 +40,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/perfil" element={<Perfil />} />
           </Route>
-
-          
+          <Route path="/reservas" element={<Review/>} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

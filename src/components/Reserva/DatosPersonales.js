@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '../../styles/Reserva/DatosPersonales.css';
 
-import { useLocation , useNavigate} from "react-router-dom"; // Importamos useLocation
+import {  useNavigate} from "react-router-dom"; // Importamos useLocation
 import "../../styles/Reserva/DatosPersonales.css";
 
 const DatosPersonales = ({ avanzar, actualizarDatos }) => {
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
   
 

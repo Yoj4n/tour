@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/VistaDetalle/BookingForm.css";
 
-function BookingForm({ precioPaquete }) {
+function BookingForm({ precioPaquete, nombreDestino }) {
   const [formData, setFormData] = useState({
     username: "",
     lastname: "",
@@ -22,7 +22,7 @@ function BookingForm({ precioPaquete }) {
       const sessionUser = sessionStorage.getItem("user");
 
       if (sessionUser) {
-        navigate("/reserva", { state: { username: formData.username, lastname: formData.lastname, email: formData.email, precioPaquete, } });
+        navigate("/reserva", { state: { username: formData.username, lastname: formData.lastname, email: formData.email, precioPaquete, nombreDestino, } });
       } else {
         navigate("/login", { 
           state: { 
@@ -31,6 +31,7 @@ function BookingForm({ precioPaquete }) {
             email: formData.email, 
             fromBooking: true, 
             precioPaquete,
+            nombreDestino,
           } 
         });
       }
