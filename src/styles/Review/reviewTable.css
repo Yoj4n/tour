@@ -20,4 +20,52 @@
   .review-table th {
     background-color: #f4f4f4;
   }
+
   
+  .review-table tr:nth-child(even) {
+    background-color: #d9e4ff;
+  }
+  
+  .review-table tr:hover {
+    background-color: #e6eff8;
+  }
+  
+
+  .btn-calificar {
+    background-color: #4870f4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .btn-calificar.disabled, .btn-calificar.disabled:hover {
+    background: gray;
+    cursor: not-allowed;
+  }
+  
+
+  .btn-cancelar {
+    background-color: #e70000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+   .btn-cancelar:hover {
+    background-color: #6b0000;
+  }
+  
+  .btn-calificar:hover {
+    background-color: #07006b;
+  }
+  
+  .btn-calificar:active {
+    transform: scale(0.95);
+  }
