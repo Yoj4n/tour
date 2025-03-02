@@ -8,7 +8,7 @@ const DatosPersonales = ({ avanzar, actualizarDatos }) => {
   // const location = useLocation();
   const navigate = useNavigate();
   
-
+  const bookingData = JSON.parse(sessionStorage.getItem("bookingData")) || {};
   // const { username, lastname, email } = location.state || {};
 
   // const [formData, setFormData] = useState({
@@ -18,14 +18,14 @@ const DatosPersonales = ({ avanzar, actualizarDatos }) => {
   //   celular: "",
   // });
 
-  const storedUser = JSON.parse(localStorage.getItem("user")) || {};
+  // const storedUser = JSON.parse(localStorage.getItem("user")) || {};
 
-const [formData, setFormData] = useState({
-  nombres: storedUser.username || "",
-  apellidos: storedUser.lastname || "",
-  correo: storedUser.email || "",
-  celular: "",
-});
+  const [formData, setFormData] = useState({
+    nombres: bookingData.username || "",
+    apellidos: bookingData.lastname || "",
+    correo: bookingData.email || "",
+    celular: bookingData.celular || "",
+  });
 
 
   const handleChange = (e) => {
@@ -46,6 +46,11 @@ const [formData, setFormData] = useState({
     setFormData({ nombres: '', apellidos: '', correo: '', celular: '' });
     navigate("/");
   };
+  const handleSaveChanges = () => {
+    sessionStorage.setItem("bookingData", JSON.stringify(formData));
+    alert("Datos actualizados correctamente.");
+  };
+  
 
   return (
     <div className="form-container">

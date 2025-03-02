@@ -4,14 +4,18 @@ import "../../styles/Reserva/Confirmacion.css";
 
 const Confirmacion = ({ avanzar, regresar }) => {
   const location = useLocation();
-  const datos = location.state || {};
-  const precioPaquete = datos.precioPaquete ? Number(datos.precioPaquete) : 0;
-  const nombreDestino = datos.nombreDestino || "Destino Desconocido"; 
+  // const datos = location.state || {};
+
+  const bookingData = JSON.parse(sessionStorage.getItem("bookingData")) || {};
+  const precioPaquete = bookingData.precioPaquete ? Number(bookingData.precioPaquete) : 0;
+  const nombreDestino = bookingData.nombreDestino || "Destino Desconocido"; 
+
+
 
   const [reserva, setReserva] = useState({
-    fechaReserva: datos.fechaReserva || "",
-    adultos: datos.adultos || 1,
-    niños: datos.niños || 0,
+    fechaReserva: bookingData.fechaReserva || "",
+    adultos: bookingData.adultos || 1,
+    ninos: bookingData.ninos || 0,
   });
 
   const tarifaGuia = 150000;
@@ -22,7 +26,7 @@ const Confirmacion = ({ avanzar, regresar }) => {
 
   const costoTotal =
     precioPaquete * reserva.adultos +
-    (precioPaquete * 0.5 * reserva.niños) +
+    (precioPaquete * 0.5 * reserva.ninos) +
     tarifaGuia +
     seguro +
     impuestoAlcaldia +
@@ -43,12 +47,12 @@ const Confirmacion = ({ avanzar, regresar }) => {
       alert("No hay usuario activo. Inicie sesión para continuar.");
       return;
     }
-    if (reserva.fechaReserva && reserva.adultos > 0 && reserva.niños >= 0) {
+    if (reserva.fechaReserva && reserva.adultos > 0 && reserva.ninos >= 0) {
       const nuevaReserva = {
         fechaReserva: reserva.fechaReserva,
         adultos: reserva.adultos,
-        niños: reserva.niños,
-        valorNeto: (precioPaquete * reserva.adultos) + (precioPaquete * 0.5 * reserva.niños),
+        ninos: reserva.ninos,
+        valorNeto: (precioPaquete * reserva.adultos) + (precioPaquete * 0.5 * reserva.ninos),
         tarifaGuia,
         seguro,
         impuestoAlcaldia,
@@ -96,14 +100,14 @@ const Confirmacion = ({ avanzar, regresar }) => {
 
           <label>Adultos</label>
           <select name="adultos" value={reserva.adultos} onChange={manejarCambio}>
-            {[1, 2, 3, 4, 5].map((num) => (
+            {[...Array(10).keys()].map((num) => (
               <option key={num} value={num}>{num}</option>
             ))}
           </select>
 
           <label>Niños</label>
-          <select name="niños" value={reserva.niños} onChange={manejarCambio}>
-            {[0, 1, 2, 3, 4, 5].map((num) => (
+          <select name="ninos" value={reserva.ninos} onChange={manejarCambio}>
+          {[...Array(10).keys()].map((num) => (
               <option key={num} value={num}>{num}</option>
             ))}
           </select>
@@ -113,7 +117,7 @@ const Confirmacion = ({ avanzar, regresar }) => {
           <h3>Resumen</h3>
           <div className="resumen">
             <p>Destino: <span>{nombreDestino}</span></p>
-            <p>Valor neto del servicio <span>${((precioPaquete*reserva.adultos)+(precioPaquete * 0.5 * reserva.niños)).toLocaleString('es-CO')}</span></p>
+            <p>Valor neto del servicio <span>${((precioPaquete*reserva.adultos)+(precioPaquete * 0.5 * reserva.ninos)).toLocaleString('es-CO')}</span></p>
             <p>Guía turístico <span>${tarifaGuia.toLocaleString('es-CO')}</span></p>
             <p>Seguro obligatorio <span>${seguro.toLocaleString('es-CO')}</span></p>
             <p>Impuesto Alcaldía <span>${impuestoAlcaldia.toLocaleString('es-CO')}</span></p>

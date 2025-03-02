@@ -31,7 +31,7 @@ const ReviewTable = () => {
                 <td>{index + 1}</td>
                 <td>{reserva.nombreDestino}</td>
                 <td>{reserva.adultos}</td>
-                <td>{reserva.niños}</td>
+                <td>{reserva.ninos}</td>
               </tr>
             ))
           ) : (

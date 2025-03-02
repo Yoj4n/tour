@@ -1,13 +1,16 @@
 import React from "react";
 import ReviewTable from "../components/Review/ReviewTable";
 // import "../styles/Review/ReviewPage.css";
+import Banner from '../components/Review/Banner';
 
 const ReviewPage = () => {
   return (
-    <div className="review-page">
-      <h2>Mis Reservas</h2>
-      <ReviewTable />
-    </div>
+    <>
+    <Banner/>
+      <div className="review-page">
+        <ReviewTable />
+      </div>
+    </>
   );
 };
 

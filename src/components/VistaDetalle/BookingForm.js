@@ -7,7 +7,10 @@ function BookingForm({ precioPaquete, nombreDestino }) {
     username: "",
     lastname: "",
     email: "",
-    checkIn: "",
+    celular: "",
+    fechaReserva: "",
+    adultos: "1",
+    ninos: "0",
   });
 
   const navigate = useNavigate();
@@ -18,22 +21,14 @@ function BookingForm({ precioPaquete, nombreDestino }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.username && formData.email && formData.checkIn) {
+    if (formData.username && formData.lastname && formData.email && formData.celular && formData.fechaReserva) {
       const sessionUser = sessionStorage.getItem("user");
-
       if (sessionUser) {
-        navigate("/reserva", { state: { username: formData.username, lastname: formData.lastname, email: formData.email, precioPaquete, nombreDestino, } });
+        sessionStorage.setItem("bookingData", JSON.stringify({ ...formData, precioPaquete, nombreDestino }));
+        // navigate("/reserva", { state: { ...formData, precioPaquete, nombreDestino } });
+        navigate("/reserva");
       } else {
-        navigate("/login", { 
-          state: { 
-            username: formData.username, 
-            lastname: formData.lastname,
-            email: formData.email, 
-            fromBooking: true, 
-            precioPaquete,
-            nombreDestino,
-          } 
-        });
+        navigate("/login", { state: { ...formData, fromBooking: true, precioPaquete, nombreDestino } });
       }
     } else {
       alert("Por favor, completa todos los campos.");
@@ -42,23 +37,46 @@ function BookingForm({ precioPaquete, nombreDestino }) {
 
   return (
     <div className="booking-form">
-      <h3 className="form-title">BOOKING FORM</h3>
+      <h3 className="form-title">RESERVAR</h3>
+      <p className="form-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.</p>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <input type="text" name="username" placeholder="Your Name..." value={formData.username} onChange={handleChange} required />
+          <label>NOMBRES</label>
+          <input type="text" name="username" placeholder="Nombre" value={formData.username} onChange={handleChange} required />
         </div>
         <div className="input-group">
-          <input type="email" name="email" placeholder="Your Email..." value={formData.email} onChange={handleChange} required />
+          <label>APELLIDOS</label>
+          <input type="text" name="lastname" placeholder="Apellidos" value={formData.lastname} onChange={handleChange} required />
         </div>
         <div className="input-group">
-          <label>Check-in Date</label>
-          <input type="date" name="checkIn" value={formData.checkIn} onChange={handleChange} required />
+          <label>CORREO ELECTRÓNICO</label>
+          <input type="email" name="email" placeholder="Correo Electrónico" value={formData.email} onChange={handleChange} required />
         </div>
         <div className="input-group">
-          <label>Check-out Date</label>
-          <input type="date" name="checkOut" required />
+          <label>CELULAR</label>
+          <input type="tel" name="celular" placeholder="Celular" value={formData.celular} onChange={handleChange} required />
         </div>
-        <button type="submit" className="submit-btn">RESERVA AQUI</button>
+        <div className="input-group">
+          <label>FECHA DE RESERVA</label>
+          <input type="date" name="fechaReserva" value={formData.fechaReserva} onChange={handleChange} required />
+        </div>
+        <div className="input-group">
+          <label>ADULTOS</label>
+          <select name="adultos" value={formData.adultos} onChange={handleChange}>
+            {[...Array(10).keys()].map((num) => (
+              <option key={num + 1} value={num + 1}>{num + 1}</option>
+            ))}
+          </select>
+        </div>
+        <div className="input-group">
+          <label>NIÑOS</label>
+          <select name="ninos" value={formData.ninos} onChange={handleChange}>
+            {[...Array(10).keys()].map((num) => (
+              <option key={num} value={num}>{num}</option>
+            ))}
+          </select>
+        </div>
+        <button type="submit" className="submit-btn">RESERVAR</button>
       </form>
     </div>
   );

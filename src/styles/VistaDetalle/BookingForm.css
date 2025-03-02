@@ -16,7 +16,7 @@
 }
 
 .form-description {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 15px;
   opacity: 0.8;
 }
@@ -35,9 +35,26 @@
   border-radius: 50px;
   font-size: 14px;
   outline: none;
+  
   text-align: center;
+  align-items: center;
+
 }
 
+.input-group label {
+  display: block;
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 50px;
+  font-size: 14px;
+}
 .date-group {
   display: flex;
   justify-content: space-between;

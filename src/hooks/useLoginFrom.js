@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const useLoginForm = () => {
@@ -11,6 +11,7 @@ const useLoginForm = () => {
     email: location.state?.email || "",
     password: "",
   });
+
   const [isLogin, setIsLogin] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -26,27 +27,23 @@ const useLoginForm = () => {
     setErrorMessage("");
 
     try {
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
       if (isLogin) {
-        const savedUser = JSON.parse(localStorage.getItem("user"));
+        // Buscar usuario en la lista de usuarios
+        const savedUser = users.find(user => user.email === formData.email);
+
         if (!savedUser) {
           throw new Error("Usuario no registrado");
         }
 
-        if (
-          savedUser.email === formData.email &&
-          savedUser.password === formData.password
-        ) {
+        if (savedUser.password === formData.password) {
           sessionStorage.setItem("user", JSON.stringify(savedUser));
 
           const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
-        
 
           navigate(redirectPath, {
-            state: {
-              username: savedUser.username,
-              lastname: savedUser.lastname,
-              email: savedUser.email,
-            },
+            state: savedUser,
             replace: true,
           });
 
@@ -55,24 +52,29 @@ const useLoginForm = () => {
           throw new Error("Credenciales incorrectas");
         }
       } else {
+        if (users.some(user => user.email === formData.email)) {
+          throw new Error("Este correo ya está registrado");
+        }
+
         if (!formData.username || !formData.lastname) {
           throw new Error("Nombre y apellidos son requeridos");
         }
 
-        const userData = {
+        const newUser = {
           username: formData.username.trim(),
           lastname: formData.lastname.trim(),
           email: formData.email.toLowerCase().trim(),
           password: formData.password,
         };
 
-        localStorage.setItem("user", JSON.stringify(userData));
-        sessionStorage.setItem("user", JSON.stringify(userData));
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+        sessionStorage.setItem("user", JSON.stringify(newUser));
 
         const redirectPath = location.state?.fromBooking ? "/reserva" : "/";
 
         navigate(redirectPath, {
-          state: userData,
+          state: newUser,
           replace: true,
         });
 
